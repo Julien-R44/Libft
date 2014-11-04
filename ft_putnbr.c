@@ -6,11 +6,11 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 01:10:11 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 01:46:52 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/04 02:25:36 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libstr.h"
+#include "libft.h"
 
 void	ft_putnbr(int n)
 {

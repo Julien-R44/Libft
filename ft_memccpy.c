@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/03 17:57:33 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/04 02:26:24 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	return (NULL);
 }
 
-int main(void)
-{
-	char str[12];
-	char str2[]="Wesh le FDP";
-
-	printf("ptr = %s\n", memccpy(str, str2, 'F', 12));
-	printf("str = %s\n", str);
-
-	char str3[12];
-	char str4[]="Wesh le FDP";
-
-	printf("\n");
-	printf("ptr = %s\n", ft_memccpy(str3, str4, 'F', 12));
-	printf("str = %s\n", str3);
-}
+//int main(void)
+//{
+//	char str[12];
+//	char str2[]="Wesh le FDP";
+//
+//	printf("ptr = %s\n", memccpy(str, str2, 'F', 12));
+//	printf("str = %s\n", str);
+//
+//	char str3[12];
+//	char str4[]="Wesh le FDP";
+//
+//	printf("\n");
+//	printf("ptr = %s\n", ft_memccpy(str3, str4, 'F', 12));
+//	printf("str = %s\n", str3);
+//}

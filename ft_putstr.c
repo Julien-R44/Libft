@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:54:58 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 01:08:15 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/04 02:25:21 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr(char const *s)
 	i = 0;
 	while (s[i])
 	{
-		write(1, &str[i], 1);
+		ft_putchar(s[i]);
 		i++;	
 	}
 }
