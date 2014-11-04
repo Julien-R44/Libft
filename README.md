@@ -1,19 +1,23 @@
 real-libft42
 ============
 
-• memset -
-• bzero - 
-• memcpy
-• memccpy
+// VERIFIER LES PROTOTYPES MAN MAC
+// PTR SUR VOID A TESTER AVEC AUTRE TYPE (memset, memcpy, bzero ...)
+// TESTED BY DARNURIA TESTS
+
+• memset = TEST Ok
+• bzero = TEST Ok
+• memcpy = TEST Ok
+• memccpy = TEST Ok -> checker return ptr 
 • memmove
-• memchr
-• memcmp
+• memchr = TEST Ok
+• memcmp = TEST Ok <!>
 • strlen - 
 • strdup - 
 • strcpy - 
 • strncpy - 
 • strcat - 
-• strncat
+• strncat -
 • strlcat
 • strchr
 • strrchr
@@ -21,11 +25,11 @@ real-libft42
 • strnstr
 • strcmp - 
 • strncmp
-• atoi
-• isalpha
-• isdigit
-• isalnum
-• isascii
-• isprint
-• toupper
-• tolower
+• atoi = TESTS OK
+• isalpha -
+• isdigit -
+• isalnum -
+• isascii -
+• isprint - 
+• toupper -
+• tolower -

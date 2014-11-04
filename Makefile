@@ -23,10 +23,13 @@ FILES_C=ft_putstr.c \
 		ft_strdup.c \
 		ft_strcpy.c \
 		ft_strcat.c \
+		ft_strncat.c \
 		ft_strstr.c \
 		ft_strcmp.c \
 		ft_atoi.c \
-		ft_memalloc.c
+		ft_memalloc.c \
+		ft_memchr.c \
+		ft_memcmp.c
 FILES_O=ft_putstr.o \
 		ft_putendl.o \
 		ft_putchar.o \
@@ -50,10 +53,13 @@ FILES_O=ft_putstr.o \
 		ft_strdup.o \
 		ft_strcpy.o \
 		ft_strcat.o \
+		ft_strncat.o \
 		ft_strstr.o \
 		ft_strcmp.o \
 		ft_atoi.o \
-		ft_memalloc.o
+		ft_memalloc.o \
+		ft_memchr.o \
+		ft_memcmp.o
 
 all: clean libft
 

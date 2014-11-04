@@ -7,7 +7,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-
 // Affichages
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
@@ -25,6 +24,8 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 // Traitements et conditions alphanumeriques
 int		ft_isalnum(int c);
@@ -40,6 +41,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strcat(char *dest, const char *src);
+char	*ft_strncat(char *dest, const char *src, size_t n);
 char	*ft_strstr(char *s, const char *to_find);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_atoi(const char *s);

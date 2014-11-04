@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   chelou.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 22:09:30 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/04 23:18:33 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
 	size_t i;
+	size_t end_of_dest;
 
 	i = 0;
-	while (i < n)
+	end_of_dest = strlen(dest);
+	while (src[i] && i < n)
 	{
-		if (((char*)src)[i] == c)
-			return (&((char*)src)[i]);
-		((char*)dst)[i] = ((char*)src)[i]; 
+		dest[end_of_dest + i] = src[i];
 		i++;
 	}
-	return (NULL);
+	dest[end_of_dest + i] = '\0';
+	return (dest);
+}
+
+int main(void)
+{
+	char str[50] = {'W', 'E', 'S', 'H'};
+	char str2[]=" FDP";
+
+	strncat(str, str2, 7);
+	puts(str);
+
+
+	char str3[50] = {'W', 'E', 'S', 'H'};
+	char str4[]=" FDP";
+
+	ft_strncat(str3, str4, 7);
+	puts(str3);
+    return 0;
 }
