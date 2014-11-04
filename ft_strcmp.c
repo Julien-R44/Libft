@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:54:58 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 01:08:15 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/03 20:36:43 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/03 20:37:38 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i])
+	while (*s1 || *s2)
 	{
-		write(1, &str[i], 1);
-		i++;	
+		if (*s1 != *s2)
+		{
+			if (*s1 > *s2)
+				return (1);
+			else if (*s1 < *s2)
+				return (-1);
+		}
+		s1++;
+		s2++;
 	}
+	return (0);
 }

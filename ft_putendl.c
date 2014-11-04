@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:54:58 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 01:08:15 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/04 01:15:45 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/04 01:17:17 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putendl(char const *s)
 {
 	size_t i;
 
 	i = 0;
 	while (s[i])
 	{
-		write(1, &str[i], 1);
-		i++;	
+		ft_putchar(s[i]);
+		i++;
 	}
+	ft_putchar('\n');
 }

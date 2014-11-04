@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:54:58 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 01:08:15 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/03 20:38:02 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/03 20:38:34 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+char	*ft_strstr(char *s, const char *to_find)
 {
-	size_t i;
+	int i;
 
 	i = 0;
-	while (s[i])
+	while(*s != '\0' && to_find[i] != '\0')
 	{
-		write(1, &str[i], 1);
-		i++;	
+		i = 0;
+		while (*s == to_find[i])
+		{
+			s++;
+			i++;
+		}
+		if (to_find[i] == '\0')
+			return (s -= i);
+		s++;
 	}
+	return (NULL);
 }

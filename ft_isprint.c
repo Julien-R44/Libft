@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:54:58 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 01:08:15 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/03 18:42:19 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/03 19:23:20 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+int		ft_isprint(int c)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(1, &str[i], 1);
-		i++;	
-	}
+	if (ft_isalnum(c) || (c >= 32 && c <= 126))
+		return (1);
+	return (0);
 }
