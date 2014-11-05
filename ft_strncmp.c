@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 20:34:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/03 20:37:38 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/05 01:20:26 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s1 && *s2 && n > 0)
+	while ((*s1 || *s2) && n > 0)
 	{
 		if (*s1 != *s2)
 		{

@@ -9,7 +9,6 @@ FILES_C=ft_putstr.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_bzero.c \
-		ft_memcpy.c \
 		ft_memccpy.c \
 		ft_memset.c \
 		ft_isalnum.c \
@@ -22,14 +21,25 @@ FILES_C=ft_putstr.c \
 		ft_strlen.c \
 		ft_strdup.c \
 		ft_strcpy.c \
+		ft_strncpy.c \
 		ft_strcat.c \
 		ft_strncat.c \
 		ft_strstr.c \
+		ft_strchr.c \
+		ft_strrchr.c \
 		ft_strcmp.c \
+		ft_strncmp.c \
 		ft_atoi.c \
+		ft_itoa.c \
 		ft_memalloc.c \
+		ft_memdel.c \
 		ft_memchr.c \
-		ft_memcmp.c
+		ft_memcmp.c \
+		ft_strnew.c \
+		ft_strdel.c \
+		ft_strclr.c \
+		ft_striter.c \
+		ft_striteri.c 
 FILES_O=ft_putstr.o \
 		ft_putendl.o \
 		ft_putchar.o \
@@ -39,7 +49,6 @@ FILES_O=ft_putstr.o \
 		ft_putendl_fd.o \
 		ft_putnbr_fd.o \
 		ft_bzero.o \
-		ft_memcpy.o \
 		ft_memccpy.o \
 		ft_memset.o \
 		ft_isalnum.o \
@@ -51,17 +60,28 @@ FILES_O=ft_putstr.o \
 		ft_toupper.o \
 		ft_strlen.o \
 		ft_strdup.o \
+		ft_strncpy.o \
 		ft_strcpy.o \
 		ft_strcat.o \
 		ft_strncat.o \
 		ft_strstr.o \
+		ft_strrchr.o \
+		ft_strchr.o \
 		ft_strcmp.o \
+		ft_strncmp.o \
 		ft_atoi.o \
+		ft_itoa.o \
 		ft_memalloc.o \
+		ft_memdel.o \
 		ft_memchr.o \
-		ft_memcmp.o
+		ft_memcmp.o \
+		ft_strnew.o \
+		ft_strdel.o \
+		ft_strclr.o \
+		ft_striter.o \
+		ft_striteri.o 
 
-all: clean libft
+all: libft
 
 libft:
 	gcc $(FLAGS) -c $(FILES_C)
@@ -71,6 +91,8 @@ libft:
 cleanO: 
 	rm -f $(FILES_O)
 
-clean:
+fclean:
 	rm -f $(FILES_O)
 	rm -f $(NAME)
+
+re: fclean all

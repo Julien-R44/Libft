@@ -6,42 +6,42 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 23:18:33 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/05 03:08:59 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+void	ft_putchar(char c)
 {
-	size_t i;
-	size_t end_of_dest;
-
-	i = 0;
-	end_of_dest = strlen(dest);
-	while (src[i] && i < n)
-	{
-		dest[end_of_dest + i] = src[i];
-		i++;
-	}
-	dest[end_of_dest + i] = '\0';
-	return (dest);
+	write(1, &c, 1);
 }
 
-int main(void)
+
+void	ft_putnbr(int n)
 {
-	char str[50] = {'W', 'E', 'S', 'H'};
-	char str2[]=" FDP";
+	if (n < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-n);
+	}
+	else if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+		ft_putchar('0' + n);
+}
 
-	strncat(str, str2, 7);
-	puts(str);
 
+int		main(void)
+{
+	int nb;
+	
+	nb = 25;
+	printf("%s\n", ft_itoa(-5));
 
-	char str3[50] = {'W', 'E', 'S', 'H'};
-	char str4[]=" FDP";
-
-	ft_strncat(str3, str4, 7);
-	puts(str3);
-    return 0;
 }

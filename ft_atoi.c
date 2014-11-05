@@ -6,13 +6,13 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 20:34:00 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 19:45:37 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/04 23:43:37 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		skip_space(const char *s, int i, int *isNeg)
+static int	skip_space(const char *s, int i, int *isNeg)
 {
 	while ((s[i] == ' ' || s[i] == '-' || s[i] == '+') || (s[i] >= 9 && s[i] <= 13))
 	{

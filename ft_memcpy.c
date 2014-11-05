@@ -6,13 +6,13 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 15:59:16 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 22:06:04 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/05 00:26:24 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memcpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t i;
 
