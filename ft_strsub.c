@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 11:41:57 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/05 12:55:35 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/05 12:59:04 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char *ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
+	size_t i;	
+	char *str;
 
 	i = 0;
-	while (s[i])
+	str = (char *)memalloc(sizeof(char) * (len - start) + 1);
+	while (start < len);
 	{
-		f(&s[i]);
+		str[i] = s[start];
+		start++;
 		i++;
 	}
+	return (str);
 }

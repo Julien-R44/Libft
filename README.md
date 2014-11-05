@@ -13,7 +13,7 @@ real-libft42
 • bzero = TEST Ok
 • memcpy = TEST Ok
 • memccpy = TEST Ok -> checker return ptr 
-• memmove
+• memmoves
 • memchr = TEST Ok
 • memcmp = TEST Ok <!>
 • strlen = TEST Ok
@@ -46,6 +46,10 @@ BONUS //
 - ft_strclr = TEST Ok
 - ft_striter = TEST Ok
 - ft_striteri 
+- ft_strequ
+- ft_strnequ 
+- ft_strsub
+- ft_strjoin
 - ft_putchar = TEST Ok
 - ft_putchar_fd = TEST Ok
 - ft_putstr = TEST Ok
