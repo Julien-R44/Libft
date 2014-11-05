@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:55:35 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 12:59:04 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/05 16:07:34 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char *ft_strsub(char const *s, unsigned int start, size_t len)
 	char *str;
 
 	i = 0;
-	str = (char *)memalloc(sizeof(char) * (len - start) + 1);
-	while (start < len);
+	if (start > len)
+		return (NULL);
+	str = (char *)ft_memalloc(sizeof(char) * (len - start) + 1);
+	while (start < len)
 	{
 		str[i] = s[start];
 		start++;

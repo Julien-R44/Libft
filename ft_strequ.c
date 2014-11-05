@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:29:59 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 12:31:51 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/05 14:35:25 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int ft_strequ(char const *s1, char const *s2)
 		else
 			return (0);
 	}
+	if (s1[i] != '\0' || s2[i] != '\0')
+		return (0);
 	return (1);
 }

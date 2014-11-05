@@ -3,7 +3,6 @@
 
 # include <string.h>
 # include <stdio.h>
-
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -49,6 +48,7 @@ int		ft_toupper(int c);
 /*
 ** Manipulation de chaine de caracteres
 */
+
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strcpy(char *dst, const char *src);
@@ -72,6 +72,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 int		ft_strequ(char const *s1, char const *s2);
 int 	ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 /*
 ** M..
