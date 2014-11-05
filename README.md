@@ -45,11 +45,11 @@ BONUS //
 - ft_strdel = TEST Ok
 - ft_strclr = TEST Ok
 - ft_striter = TEST Ok
-- ft_striteri 
-- ft_strequ
-- ft_strnequ 
-- ft_strsub
-- ft_strjoin
+- ft_striteri -
+- ft_strequ = TEST Ok
+- ft_strnequ = TEST Ok
+- ft_strsub = TEST Ok
+- ft_strjoin = 
 - ft_putchar = TEST Ok
 - ft_putchar_fd = TEST Ok
 - ft_putstr = TEST Ok

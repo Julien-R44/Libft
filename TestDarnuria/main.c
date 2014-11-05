@@ -17,6 +17,7 @@ int			main(void)
 	//res += ft_test_strnew();
 	//res += ft_test_strsub();
 	res += ft_test_strsub();
+	res += ft_test_strjoin();
 	//res += ft_test_strjoin();
 	//res += ft_test_striter();
 	//res += ft_test_isascii();
