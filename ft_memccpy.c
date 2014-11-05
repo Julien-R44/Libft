@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 11:40:18 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/05 19:24:21 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		if (((char*)src)[i] == c)
-			return (&((char*)src)[i]);
+			return (&((char*)src)[i + 1]);
 		((char*)dst)[i] = ((char*)src)[i]; 
 		i++;
 	}

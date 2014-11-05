@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 15:54:12 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/05 19:06:17 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,63 +14,74 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	ft_putchar(char c)
+static int	skip_space(const char *s, int i, int *isNeg)
 {
-	write(1, &c, 1);
-}
-
-void	*ft_memalloc(size_t size)
-{
-	void *ptr;
-
-	if ((ptr = malloc(size)) != NULL)
-		return (ptr);
-	return (NULL);
-}
-
-char *ft_strsub(char const *s, unsigned int start, size_t len)
-{
-	size_t i;	
-	char *str;
-	unsigned int leng;
-
-	leng = (unsigned int)len;
-	i = 0;
-	if (start >= len)
-		return (NULL);
-	str = (char *)ft_memalloc(sizeof(char) * (len - start) + 1);
-	while (start < leng)
+	while ((s[i] == ' ' || s[i] == '-' || s[i] == '+') || (s[i] >= 9 && s[i] <= 13))
 	{
-		str[i] = s[start];
-		start++;
+		if (*isNeg)
+			return (0);
+		if (s[i] == '-')
+		{
+			if (*isNeg)
+				return (0);
+			*isNeg = -1;
+		}
+		else if (s[i] == '+')
+		{
+			if (*isNeg)
+				return (0);
+			*isNeg = 1;
+		}
 		i++;
 	}
-	return (str);
+	if (*isNeg == 0)
+		*isNeg = 1;
+	return (i);
 }
 
-
-void	ft_putnbr(int n)
+int		ft_isdigit(int c)
 {
-	if (n < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-n);
-	}
-	else if (n >= 10)
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	else
-		ft_putchar('0' + n);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 
+void	ft_putchar(char c)
+{
+	write(1 , &c , 1);
+}
+
+int		ft_atoi(const char *s)
+{
+	int i;
+	int result;
+	int value;
+	int	isNeg;
+
+	i = 0;
+	result = 0;
+	value = 0;
+	isNeg = 0;
+	i = skip_space(s, i, &isNeg);
+	while (s[i] != '\0')
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			result = s[i] - '0';
+			value = (value * 10) + result;
+		}
+		else
+			return (value * isNeg);
+		i++;
+	}
+	return (value * isNeg);
+}
 
 int		main(void)
 {
 	int ret;
 	char *str;
 
-	str = ft_strsub("123456789", 3, 6);
-	printf("%s\n", str);
+	printf("%d\n", atoi(" - 123"));
+	printf("%d\n", ft_atoi(" - 123"));
 }

@@ -47,7 +47,7 @@ int	uf_test_strequ(void);
 int	uf_test_striteri(void);
 int	uf_test_striter(void);
 int	uf_test_strclr(void);
-int	uf_test_strdel(void);
+//int	uf_test_strdel(void);
 int	uf_test_strnew(void);
 int	uf_test_memalloc_and_del(void);
 int	uf_test_tolower(void);
@@ -61,7 +61,7 @@ int	uf_test_atoi(void);
 int	uf_test_strncmp(void);
 int	uf_test_strcmp(void);
 //int	uf_test_strnstr(void);
-//int	uf_test_strstr(void);
+int	uf_test_strstr(void);
 int	uf_test_strrchr(void);
 int	uf_test_strchr(void);
 //int	uf_test_strlcat(void);
@@ -72,7 +72,7 @@ int	uf_test_strcpy(void);
 int	uf_test_strdup(void);
 int	uf_test_strlen(void);
 //int	uf_test_memmove(void);
-int	uf_test_memchr(void);
+//int	uf_test_memchr(void);
 int	uf_test_memcmp(void);
 int	uf_test_memccpy(void);
 int	uf_test_memcpy(void);
@@ -133,12 +133,12 @@ int					main(int argc, const char **argv)
 	D_ADD_HCTEST(bzero);
 #define	D_MEMCPY
 	D_ADD_HCTEST(memcpy);
-//#define	D_MEMCCPY
-//	D_ADD_HCTEST(memccpy);
-#define	D_MEMMOVE
-	D_ADD_HCTEST(memmove);
-#define	D_MEMCHR
-	D_ADD_HCTEST(memchr);
+#define	D_MEMCCPY
+	D_ADD_HCTEST(memccpy);
+//#define	D_MEMMOVE
+//	D_ADD_HCTEST(memmove);
+//#define	D_MEMCHR
+//	D_ADD_HCTEST(memchr);
 #define	D_MEMCMP
 	D_ADD_HCTEST(memcmp);
 #define	D_STRLEN
@@ -153,16 +153,16 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(strcat);
 #define	D_STRNCAT
 	D_ADD_TEST(strncat);
-#define	D_STRLCAT
-	D_ADD_TEST(strlcat);
+//#define	D_STRLCAT
+//	D_ADD_TEST(strlcat);
 #define	D_STRCHR
 	D_ADD_TEST(strchr);
 #define	D_STRRCHR
 	D_ADD_TEST(strrchr);
 #define	D_STRSTR
 	D_ADD_TEST(strstr);
-#define	D_STRNSTR
-	D_ADD_TEST(strnstr);
+//#define	D_STRNSTR
+//	D_ADD_TEST(strnstr);
 #define	D_STRCMP
 	D_ADD_TEST(strcmp);
 #define	D_STRNCMP
@@ -187,8 +187,8 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(memalloc_and_del);
 #define	D_STRNEW
 	D_ADD_TEST(strnew);
-#define	D_STRDEL
-	D_ADD_TEST(strdel);
+//#define	D_STRDEL
+//	D_ADD_TEST(strdel);
 #define	D_STRCLR
 	D_ADD_TEST(strclr);
 #define	D_STRITER
@@ -207,8 +207,8 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(strsub);
 #define	D_STRJOIN
 	D_ADD_TEST(strjoin);
-#define	D_STRSPLIT
-	D_ADD_TEST(strsplit);
+//#define	D_STRSPLIT
+//	D_ADD_TEST(strsplit);
 #define	D_ITOA
 	D_ADD_TEST(itoa);
 //#define	D_STRTRIM
@@ -1043,8 +1043,8 @@ int				uf_test_atoi(void)
 	size_t		i, j;
 	char		str[12] = {0};
 
-/*	if (atoi("\n\v\t\r\f -123") != ft_atoi("\n\v\t\r\f -123"))
-		D_ERROR*/
+	if (atoi("\n\v\t\r\f -123") != ft_atoi("\n\v\t\r\f -123"))
+		D_ERROR
 	if (atoi("12-3") != ft_atoi("12-3"))
 		D_ERROR
 	if (atoi("-+123") != ft_atoi("-+123"))
@@ -1061,8 +1061,8 @@ int				uf_test_atoi(void)
 		D_ERROR
 	if (atoi(" - 123") != ft_atoi(" - 123"))
 		D_ERROR
-/*	if (atoi("\t -123") != ft_atoi("\t -123"))
-		D_ERROR*/
+	if (atoi("\t -123") != ft_atoi("\t -123"))
+		D_ERROR
 	if (atoi("-2147483648") != ft_atoi("-2147483648"))
 		D_ERROR
 	if (atoi("2147483647") != ft_atoi("2147483647"))

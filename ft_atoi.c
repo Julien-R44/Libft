@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 20:34:00 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 11:39:47 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/05 19:09:33 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ static int	skip_space(const char *s, int i, int *isNeg)
 {
 	while ((s[i] == ' ' || s[i] == '-' || s[i] == '+') || (s[i] >= 9 && s[i] <= 13))
 	{
+		if (*isNeg)
+			return (0);
 		if (s[i] == '-')
 		{
 			if (*isNeg)
 				return (0);
 			*isNeg = -1;
 		}
-		if (s[i] == '+')
+		else if (s[i] == '+')
 		{
 			if (*isNeg)
 				return (0);
@@ -34,6 +36,7 @@ static int	skip_space(const char *s, int i, int *isNeg)
 		*isNeg = 1;
 	return (i);
 }
+
 
 int		ft_atoi(const char *s)
 {

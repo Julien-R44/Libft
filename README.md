@@ -9,9 +9,9 @@ real-libft42
 // STATIC FUNCTIONS
 // ITOA POUR PUTNBR ET PUTNBR_FD -> GERER OVERFLOW ITOA
 
-• memset = TEST Ok
-• bzero = TEST Ok
-• memcpy = TEST Ok
+• memset = TEST Ok - ok
+• bzero = TEST Ok - ok
+• memcpy = TEST Ok 
 • memccpy = TEST Ok -> checker return ptr 
 • memmoves
 • memchr = TEST Ok
