@@ -18,7 +18,6 @@ void		ft_buserror(int c)
 
 void		ft_print_status(int res)
 {
-	printf("%d\n", res);
 	if (!res)
 	{
 		printf(" \033[32m[Success]\033[0m\n");

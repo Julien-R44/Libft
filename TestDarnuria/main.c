@@ -15,7 +15,9 @@ int			main(void)
 	//res += ft_test_isalpha();
 	//res += ft_test_isdigit();
 	//res += ft_test_strnew();
-	res += ft_test_striteri();
+	//res += ft_test_strsub();
+	res += ft_test_strsub();
+	//res += ft_test_strjoin();
 	//res += ft_test_striter();
 	//res += ft_test_isascii();
 	//res += ft_test_isprint();
