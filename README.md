@@ -20,7 +20,7 @@ explicitement indiqué.
 • bzero = TEST Ok - ok
 • memcpy = TEST Ok - ok
 • memccpy = test _ - OK
-• memmoves -----------------
+• memmove -----------------
 • memchr = TEST Ok - ok
 • memcmp = TEST Ok - ok
 • strlen = TEST Ok - ok
@@ -63,11 +63,18 @@ explicitement indiqué.
 - ft_strsplit = No ---------------------
 - ft_itoa = ~~ no  ----------------
 - ft_putchar = TEST Ok
-- ft_putchar_fd = TEST Ok
-- ft_putstr = TEST Ok
-- ft_putstr_fd = TEST Ok
+- ft_putstr = Ok
 - ft_putendl = TEST Ok
+- ft_putnbr = OVERFLOW ITOA
+- ft_putchar_fd = TEST Ok
+- ft_putstr_fd = TEST Ok
 - ft_putend_fd = TEST Ok
+- ft_putnbr_fd = OVERFLOW ITOA
 
 // BONUS CHAINED LIST
-- 
+- ft_lstnew = Test _ - OK
+- ft_lstdelone = Test _ - OK
+- ft_lstdel = Test _ - OK
+- ft_lstadd
+- ft_lstiter
+- ft_lstmap

@@ -79,17 +79,10 @@ int	uf_test_memcpy(void);
 int	uf_test_memset(void);
 int	uf_test_bzero(void);
 int	uf_test_lstnew(void);
-//int	uf_test_lstdelone(void);
-//int	uf_test_lstdel(void);
-//int	uf_test_lstadd(void);
+int	uf_test_lstdelone(void);
+int	uf_test_lstdel(void);
+int	uf_test_lstadd(void);
 //int	uf_test_lstiter(void);
-
-typedef struct s_list
-{
-	void *content;
-	size_t content_size;
-	struct s_list *next;
-} t_list;
 
 typedef struct	s_test
 {
@@ -215,12 +208,12 @@ int					main(int argc, const char **argv)
 //	D_ADD_TEST(strtrim);
 #define	D_LSTNEW
 	D_ADD_TEST(lstnew);
-//#define	D_LSTDELONE
-//	D_ADD_TEST(lstdelone);
-//#define	D_LSTDEL
-//	D_ADD_TEST(lstdel);
-//#define	D_LSTADD
-//	D_ADD_TEST(lstadd);
+#define	D_LSTDELONE
+	D_ADD_TEST(lstdelone);
+#define	D_LSTDEL
+	D_ADD_TEST(lstdel);
+#define	D_LSTADD
+	D_ADD_TEST(lstadd);
 //#define	D_LSTITER
 //	D_ADD_TEST(lstiter);
 
