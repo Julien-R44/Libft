@@ -5,16 +5,22 @@ real-libft42
 // VERIFIER CAST FONCTIONS GENERIQUES
 // PTR SUR VOID A TESTER AVEC AUTRE TYPE (memset, memcpy, bzero ...)
 // TEST BY DARNURIA-TESTS & other main
-// NORMINETTE?
+// NORMINETTE / FLAGS
 // STATIC FUNCTIONS
 // ITOA POUR PUTNBR ET PUTNBR_FD -> GERER OVERFLOW ITOA
 // Ft_strclen -> ft_strsplit
+// INCLUDES STDIO ET STRINGS.H
+// FICHIER AUTEUR 
+- Une chaine de caractères est TOUJOURS terminée par un ’\0’, même si cela
+a été omis dans la description d’une fonction. Dans le cas contraire, cela serait
+explicitement indiqué.
+
 
 • memset = TEST Ok - ok
 • bzero = TEST Ok - ok
 • memcpy = TEST Ok - ok
-• memccpy = NO
-• memmoves
+• memccpy = test _ - OK
+• memmoves -----------------
 • memchr = TEST Ok - ok
 • memcmp = TEST Ok - ok
 • strlen = TEST Ok - ok
@@ -23,11 +29,11 @@ real-libft42
 • strncpy = TEST Ok - ok 
 • strcat = TEST Ok - ok
 • strncat = TEST Ok - ok
-• strlcat
+• strlcat----------------------
 • strchr = TEST Ok - ok 
 • strrchr = TEST Ok - ok
 • strstr = TEST Ok - ok
-• strnstr
+• strnstr --------------------
 • strcmp = TEST Ok - ok
 • strncmp = TEST Ok - ok
 • atoi = TESTS OK - ok
@@ -39,7 +45,7 @@ real-libft42
 • toupper = TEST Ok - ok
 • tolower = TEST Ok - ok
 
-BONUS //
+// SUPPS
 - ft_memalloc = TEST Ok - ok
 - ft_memdel = TEST Ok - ok
 - ft_strnew = TEST Ok - ok
@@ -47,16 +53,21 @@ BONUS //
 - ft_strclr = TEST Ok - ok
 - ft_striter = TEST Ok - ok
 - ft_striteri = test _ - ok
+- ft_strmap = test _ - OK
+- ft_strmapi = test _ - OK
 - ft_strequ = TEST _ - ok
 - ft_strnequ = TEST _ - ok
 - ft_strsub = TEST _ - ok
 - ft_strjoin = TEST _ - ok
-- ft_strsplit = NO
-- ft_itoa = 
+- ft_strtrim = TEST _ - ok
+- ft_strsplit = No ---------------------
+- ft_itoa = ~~ no  ----------------
 - ft_putchar = TEST Ok
 - ft_putchar_fd = TEST Ok
 - ft_putstr = TEST Ok
 - ft_putstr_fd = TEST Ok
 - ft_putendl = TEST Ok
 - ft_putend_fd = TEST Ok
-- ft_itoa = overflow -2 147 483 648
+
+// BONUS CHAINED LIST
+- 

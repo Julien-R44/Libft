@@ -6,13 +6,22 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 01:09:26 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/06 02:32:40 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+void	*ft_memalloc(size_t size)
+{
+	void *ptr;
+
+	if ((ptr = malloc(size)) != NULL)
+		return (ptr);
+	return (NULL);
+}
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
@@ -32,6 +41,25 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	return (dst);
 }
 
+char *ft_strsub(char const *s, unsigned int start, size_t len)
+{
+	size_t i;	
+	char *str;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	str = (char *)ft_memalloc(sizeof(char) * (len) + 1);
+	while (i < len)
+	{
+		str[i] = s[start];
+		start++;
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
 static size_t	ft_strclen(char const *s, char c)
 {
 	size_t i;
@@ -42,7 +70,7 @@ static size_t	ft_strclen(char const *s, char c)
 	return (i);
 }
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t i;
 
@@ -52,71 +80,43 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-void	*ft_memalloc(size_t size)
-{
-	void *ptr;
+static int	is_blank(char c);
 
-	if ((ptr = malloc(size)) != NULL)
-		return (ptr);
-	return (NULL);
-}
-
-static void	rev(char *str)
+char		*ft_strtrim(char const *s)
 {
 	size_t i;
-	size_t j;
-	char tmp;
- 
- 	i = 0;
- 	j = ft_strlen(str) - 1; 
-	while (i < j)
-	{
-		tmp = str[i];
-		str[i] = str[j];
-		str[j] = tmp;
+	size_t nblanks_start;
+	size_t nblanks_end;
+	size_t len;
+	char 	*newstr;
+
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s) - 1; // <!>
+	while (is_blank(s[i]))
 		i++;
-		j--;
+	nblanks_start = i;
+	i = 0;
+	while (is_blank(s[len]))
+	{
+		i++;
+		len--;
 	}
+	nblanks_end = i;
+	newstr = ft_strsub(s, nblanks_start, (ft_strlen((char*)s) - (nblanks_end + nblanks_start))); 
+	printf("%s\n", newstr);
 }
 
-char	*ft_itoa(int n)
+static int	is_blank(char c)
 {
-	char *str;
-	int isNeg;
-	int tmp2;
-	int i;
-
-	i = 0;
-	isNeg = (n < 0) ? -1 : 1;
-	str = (char *)malloc(sizeof(str) * 20);
-	if (isNeg == -1)
-		n = -n;
-	tmp2 = n;
-	while ((tmp2 /= 10) > 0)
-	{
-		str[i] = n % 10 + '0';
- 		tmp2 = n;
-		n /= 10;
-		i++;
-	}
-	if (i == 0)
-	{
-		str[i] = n % 10 + '0';
-		i++;
-	}
-	if (isNeg == -1)
-		str[i] = '-';
-	str[i + 1] = '\0';
-	rev(str);
-	return (str);
+	if (c == ' ' || c == '\t' || c == '\n')
+		return (1);
+	return (0);
 }
 
 int main(void)
 {
-	char str[]="*esh**les***salopes***";
-	char *ret;
+	char str[]="\n\nwesh fdp\t\n";
 
-	printf("%d\n", strcmp(ret = ft_itoa(123), "123"));
-	printf("%s\n", ret);
-
+	ft_strtrim(str);
 }

@@ -39,7 +39,7 @@
 //int	uf_test_strsplit(void);
 //int	uf_test_strjoin(void);
 //int	uf_test_strsub(void);
-int	uf_test_itoa(void);
+//int	uf_test_itoa(void);
 //int	uf_test_strnequ(void);
 //int	uf_test_strequ(void);
 //int	uf_test_strmapi(void);
@@ -74,11 +74,11 @@ int	uf_test_itoa(void);
 //int	uf_test_memmove(void);
 //int	uf_test_memchr(void);
 //int	uf_test_memcmp(void);
-//int	uf_test_memccpy(void);
-//int	uf_test_memcpy(void);
-//int	uf_test_memset(void);
-//int	uf_test_bzero(void);
-//int	uf_test_lstnew(void);
+int	uf_test_memccpy(void);
+int	uf_test_memcpy(void);
+int	uf_test_memset(void);
+int	uf_test_bzero(void);
+int	uf_test_lstnew(void);
 //int	uf_test_lstdelone(void);
 //int	uf_test_lstdel(void);
 //int	uf_test_lstadd(void);
@@ -127,14 +127,14 @@ int					main(int argc, const char **argv)
  * // #define D_MEMSET
  * // D_ADD_TEST(...)
  */
-//#define	D_MEMSET
-//	D_ADD_HCTEST(memset);
-//#define	D_BZERO
-//	D_ADD_HCTEST(bzero);
-//#define	D_MEMCPY
-//	D_ADD_HCTEST(memcpy);
-//#define	D_MEMCCPY
-//	D_ADD_HCTEST(memccpy);
+#define	D_MEMSET
+	D_ADD_HCTEST(memset);
+#define	D_BZERO
+	D_ADD_HCTEST(bzero);
+#define	D_MEMCPY
+	D_ADD_HCTEST(memcpy);
+#define	D_MEMCCPY
+	D_ADD_HCTEST(memccpy);
 //#define	D_MEMMOVE
 //	D_ADD_HCTEST(memmove);
 //#define	D_MEMCHR
@@ -209,12 +209,12 @@ int					main(int argc, const char **argv)
 //	D_ADD_TEST(strjoin);
 //#define	D_STRSPLIT
 //	D_ADD_TEST(strsplit);
-#define	D_ITOA
-	D_ADD_TEST(itoa);
+//#define	D_ITOA
+//	D_ADD_TEST(itoa);
 //#define	D_STRTRIM
 //	D_ADD_TEST(strtrim);
-//#define	D_LSTNEW
-//	D_ADD_TEST(lstnew);
+#define	D_LSTNEW
+	D_ADD_TEST(lstnew);
 //#define	D_LSTDELONE
 //	D_ADD_TEST(lstdelone);
 //#define	D_LSTDEL

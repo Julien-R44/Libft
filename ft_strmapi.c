@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 04:13:06 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 04:14:39 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/06 03:25:18 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/06 03:25:40 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			i;
-	unsigned char	carac;
-	char			*s1;
-	char			*s2;
+	size_t	i;
+	size_t	len;
+	char	*newstr;
 
 	i = 0;
-	carac = (unsigned char)c;
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	while (i < n)
+	if (s == NULL)
+		return (NULL);
+	if (f == NULL)
+		return (ft_strdup(s));
+	len = ft_strlen(s);
+	newstr = ft_strnew(len);
+	while (i < len)
 	{
-		s1[i] = s2[i];
-		if (s2[i] == carac)
-			return (&s1[i + 1]);
+		newstr[i] = (*f)(i, s[i]);
 		i++;
 	}
+	return (newstr);
 }
