@@ -10,7 +10,6 @@ int			main(void)
 	
 	g_tests = 0;
 	g_tests_ok = 0;
-
 	res = 0;
 	//res += ft_test_isalpha();
 	//res += ft_test_isdigit();

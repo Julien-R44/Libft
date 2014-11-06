@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 19:06:17 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/06 01:09:26 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,74 +14,109 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int	skip_space(const char *s, int i, int *isNeg)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	while ((s[i] == ' ' || s[i] == '-' || s[i] == '+') || (s[i] >= 9 && s[i] <= 13))
+	size_t i;
+
+	i = 0;
+	while (src[i] != '\0' && i < n)
 	{
-		if (*isNeg)
-			return (0);
-		if (s[i] == '-')
-		{
-			if (*isNeg)
-				return (0);
-			*isNeg = -1;
-		}
-		else if (s[i] == '+')
-		{
-			if (*isNeg)
-				return (0);
-			*isNeg = 1;
-		}
+		dst[i] = src[i];
 		i++;
 	}
-	if (*isNeg == 0)
-		*isNeg = 1;
+	while (n > i)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
+}
+
+static size_t	ft_strclen(char const *s, char c)
+{
+	size_t i;
+
+	i = 0;
+	while (s[i] != c)
+		i++;
 	return (i);
 }
 
-int		ft_isdigit(int c)
+size_t	ft_strlen(char *str)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-void	ft_putchar(char c)
-{
-	write(1 , &c , 1);
-}
-
-int		ft_atoi(const char *s)
-{
-	int i;
-	int result;
-	int value;
-	int	isNeg;
+	size_t i;
 
 	i = 0;
-	result = 0;
-	value = 0;
-	isNeg = 0;
-	i = skip_space(s, i, &isNeg);
-	while (s[i] != '\0')
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			result = s[i] - '0';
-			value = (value * 10) + result;
-		}
-		else
-			return (value * isNeg);
+	while (str[i])
 		i++;
-	}
-	return (value * isNeg);
+	return (i);
 }
 
-int		main(void)
+void	*ft_memalloc(size_t size)
 {
-	int ret;
-	char *str;
+	void *ptr;
 
-	printf("%d\n", atoi(" - 123"));
-	printf("%d\n", ft_atoi(" - 123"));
+	if ((ptr = malloc(size)) != NULL)
+		return (ptr);
+	return (NULL);
+}
+
+static void	rev(char *str)
+{
+	size_t i;
+	size_t j;
+	char tmp;
+ 
+ 	i = 0;
+ 	j = ft_strlen(str) - 1; 
+	while (i < j)
+	{
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i++;
+		j--;
+	}
+}
+
+char	*ft_itoa(int n)
+{
+	char *str;
+	int isNeg;
+	int tmp2;
+	int i;
+
+	i = 0;
+	isNeg = (n < 0) ? -1 : 1;
+	str = (char *)malloc(sizeof(str) * 20);
+	if (isNeg == -1)
+		n = -n;
+	tmp2 = n;
+	while ((tmp2 /= 10) > 0)
+	{
+		str[i] = n % 10 + '0';
+ 		tmp2 = n;
+		n /= 10;
+		i++;
+	}
+	if (i == 0)
+	{
+		str[i] = n % 10 + '0';
+		i++;
+	}
+	if (isNeg == -1)
+		str[i] = '-';
+	str[i + 1] = '\0';
+	rev(str);
+	return (str);
+}
+
+int main(void)
+{
+	char str[]="*esh**les***salopes***";
+	char *ret;
+
+	printf("%d\n", strcmp(ret = ft_itoa(123), "123"));
+	printf("%s\n", ret);
+
 }

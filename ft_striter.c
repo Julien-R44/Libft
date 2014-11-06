@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 11:41:57 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/06 00:22:45 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_striter(char *s, void (*f)(char *))
 	size_t i;
 
 	i = 0;
-	while (s[i])
+	if (s && f)
 	{
-		f(&s[i]);
-		i++;
+		while (s[i])
+		{
+			(*f)(&s[i]);
+			i++;
+		}
 	}
 }

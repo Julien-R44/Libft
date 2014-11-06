@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:29:59 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 14:35:25 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/06 00:28:45 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ int ft_strequ(char const *s1, char const *s2)
 	size_t i;
 
 	i = 0;
+	if (!s1 && !s2)
+		return (1);
+	if (!s1 || !s2)
+		return (0);
 	while (s1[i] && s2[i])
 	{
 		if (s1[i] == s2[i])

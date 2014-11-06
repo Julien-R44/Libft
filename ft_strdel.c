@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 11:41:52 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/06 00:13:59 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_strdel(char **as)
 {
-	if (*as)
-		free(*as);
-	*as = NULL;
+	ft_memdel((void **)as);
 }

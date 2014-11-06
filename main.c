@@ -37,47 +37,47 @@
 
 //int	uf_test_strtrim(void);
 //int	uf_test_strsplit(void);
-int	uf_test_strjoin(void);
-int	uf_test_strsub(void);
+//int	uf_test_strjoin(void);
+//int	uf_test_strsub(void);
 int	uf_test_itoa(void);
-int	uf_test_strnequ(void);
-int	uf_test_strequ(void);
+//int	uf_test_strnequ(void);
+//int	uf_test_strequ(void);
 //int	uf_test_strmapi(void);
 //int	uf_test_strmap(void);
-int	uf_test_striteri(void);
-int	uf_test_striter(void);
-int	uf_test_strclr(void);
+//int	uf_test_striteri(void);
+//int	uf_test_striter(void);
+//int	uf_test_strclr(void);
 //int	uf_test_strdel(void);
-int	uf_test_strnew(void);
-int	uf_test_memalloc_and_del(void);
-int	uf_test_tolower(void);
-int	uf_test_toupper(void);
-int	uf_test_isprint(void);
-int	uf_test_isascii(void);
-int	uf_test_isalnum(void);
-int	uf_test_isdigit(void);
-int	uf_test_isalpha(void);
-int	uf_test_atoi(void);
-int	uf_test_strncmp(void);
-int	uf_test_strcmp(void);
+//int	uf_test_strnew(void);
+//int	uf_test_memalloc_and_del(void);
+//int	uf_test_tolower(void);
+//int	uf_test_toupper(void);
+//int	uf_test_isprint(void);
+//int	uf_test_isascii(void);
+//int	uf_test_isalnum(void);
+//int	uf_test_isdigit(void);
+//int	uf_test_isalpha(void);
+//int	uf_test_atoi(void);
+//int	uf_test_strncmp(void);
+//int	uf_test_strcmp(void);
 //int	uf_test_strnstr(void);
-int	uf_test_strstr(void);
-int	uf_test_strrchr(void);
-int	uf_test_strchr(void);
+//int	uf_test_strstr(void);
+//int	uf_test_strrchr(void);
+//int	uf_test_strchr(void);
 //int	uf_test_strlcat(void);
-int	uf_test_strncat(void);
-int	uf_test_strcat(void);
-int	uf_test_strncpy(void);
-int	uf_test_strcpy(void);
-int	uf_test_strdup(void);
-int	uf_test_strlen(void);
+//int	uf_test_strncat(void);
+//int	uf_test_strcat(void);
+//int	uf_test_strncpy(void);
+//int	uf_test_strcpy(void);
+//int	uf_test_strdup(void);
+//int	uf_test_strlen(void);
 //int	uf_test_memmove(void);
 //int	uf_test_memchr(void);
-int	uf_test_memcmp(void);
-int	uf_test_memccpy(void);
-int	uf_test_memcpy(void);
-int	uf_test_memset(void);
-int	uf_test_bzero(void);
+//int	uf_test_memcmp(void);
+//int	uf_test_memccpy(void);
+//int	uf_test_memcpy(void);
+//int	uf_test_memset(void);
+//int	uf_test_bzero(void);
 //int	uf_test_lstnew(void);
 //int	uf_test_lstdelone(void);
 //int	uf_test_lstdel(void);
@@ -127,86 +127,86 @@ int					main(int argc, const char **argv)
  * // #define D_MEMSET
  * // D_ADD_TEST(...)
  */
-#define	D_MEMSET
-	D_ADD_HCTEST(memset);
-#define	D_BZERO
-	D_ADD_HCTEST(bzero);
-#define	D_MEMCPY
-	D_ADD_HCTEST(memcpy);
-#define	D_MEMCCPY
-	D_ADD_HCTEST(memccpy);
+//#define	D_MEMSET
+//	D_ADD_HCTEST(memset);
+//#define	D_BZERO
+//	D_ADD_HCTEST(bzero);
+//#define	D_MEMCPY
+//	D_ADD_HCTEST(memcpy);
+//#define	D_MEMCCPY
+//	D_ADD_HCTEST(memccpy);
 //#define	D_MEMMOVE
 //	D_ADD_HCTEST(memmove);
 //#define	D_MEMCHR
 //	D_ADD_HCTEST(memchr);
-#define	D_MEMCMP
-	D_ADD_HCTEST(memcmp);
-#define	D_STRLEN
-	D_ADD_TEST(strlen);
-#define	D_STRDUP
-	D_ADD_TEST(strdup);
-#define	D_STRCPY
-	D_ADD_HCTEST(strcpy);
-#define	D_STRNCPY
-	D_ADD_HCTEST(strncpy);
-#define	D_STRCAT
-	D_ADD_TEST(strcat);
-#define	D_STRNCAT
-	D_ADD_TEST(strncat);
+//#define	D_MEMCMP
+//	D_ADD_HCTEST(memcmp);
+//#define	D_STRLEN
+//	D_ADD_TEST(strlen);
+//#define	D_STRDUP
+//	D_ADD_TEST(strdup);
+//#define	D_STRCPY
+//	D_ADD_HCTEST(strcpy);
+//#define	D_STRNCPY
+//	D_ADD_HCTEST(strncpy);
+//#define	D_STRCAT
+//	D_ADD_TEST(strcat);
+//#define	D_STRNCAT
+//	D_ADD_TEST(strncat);
 //#define	D_STRLCAT
 //	D_ADD_TEST(strlcat);
-#define	D_STRCHR
-	D_ADD_TEST(strchr);
-#define	D_STRRCHR
-	D_ADD_TEST(strrchr);
-#define	D_STRSTR
-	D_ADD_TEST(strstr);
+//#define	D_STRCHR
+//	D_ADD_TEST(strchr);
+//#define	D_STRRCHR
+//	D_ADD_TEST(strrchr);
+//#define	D_STRSTR
+//	D_ADD_TEST(strstr);
 //#define	D_STRNSTR
 //	D_ADD_TEST(strnstr);
-#define	D_STRCMP
-	D_ADD_TEST(strcmp);
-#define	D_STRNCMP
-	D_ADD_TEST(strncmp);
-#define	D_ATOI
-	D_ADD_HCTEST(atoi);
-#define	D_ISALPHA
-	D_ADD_HCTEST(isalpha);
-#define	D_ISDIGIT
-	D_ADD_HCTEST(isdigit);
-#define	D_ISALNUM
-	D_ADD_HCTEST(isalnum);
-#define	D_ISASCII
-	D_ADD_HCTEST(isascii);
-#define	D_ISPRINT
-	D_ADD_HCTEST(isprint);
-#define	D_TOUPPER
-	D_ADD_HCTEST(toupper);
-#define	D_TOLOWER
-	D_ADD_HCTEST(tolower);
-#define	D_MEMALLOC_AND_DEL
-	D_ADD_TEST(memalloc_and_del);
-#define	D_STRNEW
-	D_ADD_TEST(strnew);
+//#define	D_STRCMP
+//	D_ADD_TEST(strcmp);
+//#define	D_STRNCMP
+//	D_ADD_TEST(strncmp);
+//#define	D_ATOI
+//	D_ADD_HCTEST(atoi);
+//#define	D_ISALPHA
+//	D_ADD_HCTEST(isalpha);
+//#define	D_ISDIGIT
+//	D_ADD_HCTEST(isdigit);
+//#define	D_ISALNUM
+//	D_ADD_HCTEST(isalnum);
+//#define	D_ISASCII
+//	D_ADD_HCTEST(isascii);
+//#define	D_ISPRINT
+//	D_ADD_HCTEST(isprint);
+//#define	D_TOUPPER
+//	D_ADD_HCTEST(toupper);
+//#define	D_TOLOWER
+//	D_ADD_HCTEST(tolower);
+//#define	D_MEMALLOC_AND_DEL
+//	D_ADD_TEST(memalloc_and_del);
+//#define	D_STRNEW
+//	D_ADD_TEST(strnew);
 //#define	D_STRDEL
 //	D_ADD_TEST(strdel);
-#define	D_STRCLR
-	D_ADD_TEST(strclr);
-#define	D_STRITER
-	D_ADD_TEST(striter);
-#define	D_STRITERI
-	D_ADD_TEST(striteri);
+//#define	D_STRCLR
+//	D_ADD_TEST(strclr);
+//#define	D_STRITER
+//	D_ADD_TEST(striter);
+//#define	D_STRITERI
+//	D_ADD_TEST(striteri);
 //#define	D_STRMAP
 //	D_ADD_TEST(strmap);
 //#define	D_STRMAPI
 //	D_ADD_TEST(strmapi);
-#define	D_STREQU
-	D_ADD_TEST(strequ);
-#define	D_STRNEQU
-	D_ADD_TEST(strnequ);
-#define	D_STRSUB
-	D_ADD_TEST(strsub);
-#define	D_STRJOIN
-	D_ADD_TEST(strjoin);
+//#define	D_STREQU
+//	D_ADD_TEST(strequ);
+//#define	D_STRNEQU
+//	D_ADD_TEST(strnequ);
+//#define	D_STRSUB
+//	D_ADD_TEST(strsub);
+//#define	D_STRJOIN
+//	D_ADD_TEST(strjoin);
 //#define	D_STRSPLIT
 //	D_ADD_TEST(strsplit);
 #define	D_ITOA
@@ -662,6 +662,7 @@ int				uf_test_itoa(void)
 	free(ret);
 	if (strcmp(ret = ft_itoa(123), "123") != 0)
 	{
+		printf("----%s---\n", ret);
 		printf("Error Line %d, Funct %s : \n\033[31mft_itoa(123).\nExpected ret = \"123\" \
 			   but have ret = \"%s\"\033[0m\n", __LINE__ - 2, __func__, ret);
 		free(ret);
@@ -1530,7 +1531,7 @@ int				uf_test_memmove(void)
 	return (1);
 }
 #endif
-/*
+
 #ifdef	D_MEMCHR
 int				uf_test_memchr(void)
 {
@@ -1564,7 +1565,7 @@ int				uf_test_memchr(void)
 	return (1);
 }
 #endif
-*/
+
 #ifdef	D_MEMCMP
 int				uf_test_memcmp(void)
 {
