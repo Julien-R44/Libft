@@ -4,52 +4,77 @@ real-libft42
 // VERIFIER LES PROTOTYPES MAN MAC
 // VERIFIER CAST FONCTIONS GENERIQUES
 // PTR SUR VOID A TESTER AVEC AUTRE TYPE (memset, memcpy, bzero ...)
-// TEST BY DARNURIA-TESTS
-// NORMINETTE?
+// TEST BY DARNURIA-TESTS & other main
+// NORMINETTE / FLAGS
 // STATIC FUNCTIONS
 // ITOA POUR PUTNBR ET PUTNBR_FD -> GERER OVERFLOW ITOA
+// Ft_strclen -> ft_strsplit
+// INCLUDES STDIO ET STRINGS.H
+// FICHIER AUTEUR 
+- Une chaine de caractères est TOUJOURS terminée par un ’\0’, même si cela
+a été omis dans la description d’une fonction. Dans le cas contraire, cela serait
+explicitement indiqué.
 
-• memset = TEST Ok
-• bzero = TEST Ok
-• memcpy = TEST Ok
-• memccpy = TEST Ok -> checker return ptr 
-• memmove
-• memchr = TEST Ok
-• memcmp = TEST Ok <!>
-• strlen = TEST Ok
-• strdup = TEST Ok
-• strcpy = TEST Ok
-• strncpy = TEST Ok
-• strcat = TEST Ok
-• strncat = TEST Ok
-• strlcat
-• strchr = TEST Ok
-• strrchr = TEST Ok
-• strstr = TEST Ok
-• strnstr
-• strcmp = TEST Ok
-• strncmp = TEST Ok
-• atoi = TESTS OK
-• isalpha = TEST Ok
-• isdigit = TEST Ok
-• isalnum = TEST Ok
-• isascii = TEST Ok
-• isprint = TEST Ok
-• toupper = TEST Ok
-• tolower = TEST Ok
 
-BONUS //
-- ft_memalloc = TEST Ok
-- ft_memdel = TEST Ok
-- ft_strnew = TEST Ok 
-- ft_strdel = TEST Ok
-- ft_strclr = TEST Ok
-- ft_striter = TEST Ok
-- ft_striteri 
+• memset = TEST Ok - ok
+• bzero = TEST Ok - ok
+• memcpy = TEST Ok - ok
+• memccpy = test _ - OK
+• memmove -----------------
+• memchr = TEST Ok - ok
+• memcmp = TEST Ok - ok
+• strlen = TEST Ok - ok
+• strdup = TEST Ok - ok
+• strcpy = TEST Ok - ok
+• strncpy = TEST Ok - ok 
+• strcat = TEST Ok - ok
+• strncat = TEST Ok - ok
+• strlcat----------------------
+• strchr = TEST Ok - ok 
+• strrchr = TEST Ok - ok
+• strstr = TEST Ok - ok
+• strnstr --------------------
+• strcmp = TEST Ok - ok
+• strncmp = TEST Ok - ok
+• atoi = TESTS OK - ok
+• isalpha = TEST Ok - ok
+• isdigit = TEST Ok - ok
+• isalnum = TEST Ok - ok
+• isascii = TEST Ok - ok
+• isprint = TEST Ok - ok
+• toupper = TEST Ok - ok
+• tolower = TEST Ok - ok
+
+// SUPPS
+- ft_memalloc = TEST Ok - ok
+- ft_memdel = TEST Ok - ok
+- ft_strnew = TEST Ok - ok
+- ft_strdel = TEST Ok - ok
+- ft_strclr = TEST Ok - ok
+- ft_striter = TEST Ok - ok
+- ft_striteri = test _ - ok
+- ft_strmap = test _ - OK
+- ft_strmapi = test _ - OK
+- ft_strequ = TEST _ - ok
+- ft_strnequ = TEST _ - ok
+- ft_strsub = TEST _ - ok
+- ft_strjoin = TEST _ - ok
+- ft_strtrim = TEST _ - ok
+- ft_strsplit = No ---------------------
+- ft_itoa = ~~ no  ----------------
 - ft_putchar = TEST Ok
-- ft_putchar_fd = TEST Ok
-- ft_putstr = TEST Ok
-- ft_putstr_fd = TEST Ok
+- ft_putstr = Ok
 - ft_putendl = TEST Ok
+- ft_putnbr = OVERFLOW ITOA
+- ft_putchar_fd = TEST Ok
+- ft_putstr_fd = TEST Ok
 - ft_putend_fd = TEST Ok
-- ft_itoa = overflow -2 147 483 648
+- ft_putnbr_fd = OVERFLOW ITOA
+
+// BONUS CHAINED LIST
+- ft_lstnew = Test _ - OK
+- ft_lstdelone = Test _ - OK
+- ft_lstdel = Test _ - OK
+- ft_lstadd
+- ft_lstiter
+- ft_lstmap

@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 15:35:41 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 20:59:05 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/06 05:04:02 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/06 05:37:07 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t i;
-
-	i = 0;
-	while (i < len)
-	{
-		((char*)b)[i] = c;
-		i++;
-	}
-	return (b);
+	if (*alst)
+		(*del)((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

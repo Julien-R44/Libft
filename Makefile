@@ -39,7 +39,14 @@ FILES_C=ft_putstr.c \
 		ft_strdel.c \
 		ft_strclr.c \
 		ft_striter.c \
-		ft_striteri.c 
+		ft_striteri.c \
+		ft_strequ.c \
+		ft_strnequ.c \
+		ft_strsub.c \
+		ft_strjoin.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c 
 FILES_O=ft_putstr.o \
 		ft_putendl.o \
 		ft_putchar.o \
@@ -79,7 +86,14 @@ FILES_O=ft_putstr.o \
 		ft_strdel.o \
 		ft_strclr.o \
 		ft_striter.o \
-		ft_striteri.o 
+		ft_striteri.o \
+		ft_strequ.o \
+		ft_strnequ.o \
+		ft_strsub.o \
+		ft_strjoin.o \
+		ft_lstnew.o \
+		ft_lstdelone.o \
+		ft_lstdel.o 
 
 all: libft
 

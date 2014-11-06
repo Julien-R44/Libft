@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 15:35:41 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 20:59:05 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/05 13:06:17 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/06 00:54:28 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char 		*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
+	char 	*str;
+	size_t 	newsize;
 
-	i = 0;
-	while (i < len)
-	{
-		((char*)b)[i] = c;
-		i++;
-	}
-	return (b);
+	if (!s1 || !s2)
+		return (NULL);
+	newsize = (ft_strlen(s1) + ft_strlen(s2));
+	str = (char *)ft_memalloc(sizeof(char) * newsize + 1);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }

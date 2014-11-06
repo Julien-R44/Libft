@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 15:35:41 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 20:59:05 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/05 12:55:35 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/06 00:33:26 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char *ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
+	size_t i;	
+	char *str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
+	str = (char *)ft_memalloc(sizeof(char) * (len) + 1);
 	while (i < len)
 	{
-		((char*)b)[i] = c;
+		str[i] = s[start];
+		start++;
 		i++;
 	}
-	return (b);
+	str[i] = '\0';
+	return (str);
 }
