@@ -3,16 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 22:00:07 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 20:21:11 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/07 11:29:17 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		f_how_many_tab(char const *s, char c);
+static int		f_how_many_tab(char const *s, char c)
+{
+	int			how_many_tab;
+	size_t		i;
+
+	how_many_tab = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			if (s[i + 1] && s[i + 1] != c)
+				how_many_tab++;
+		}
+		i++;
+	}
+	return (how_many_tab);
+}
 
 char			**ft_strsplit(char const *s, char c)
 {
@@ -41,23 +58,4 @@ char			**ft_strsplit(char const *s, char c)
 		i++;
 	}
 	return (tab);
-}
-
-static int		f_how_many_tab(char const *s, char c)
-{
-	int 		how_many_tab;
-	size_t 		i;
-
-	how_many_tab = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			if (s[i + 1] && s[i + 1] != c)
-				how_many_tab++;
-		}
-		i++;
-	}
-	return (how_many_tab);
 }

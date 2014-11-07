@@ -6,15 +6,15 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:18:55 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/03 14:24:49 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:20:12 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+char		*ft_strcpy(char *dst, const char *src)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (src[i] != '\0')

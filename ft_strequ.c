@@ -6,15 +6,15 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:29:59 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 00:28:45 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:21:00 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strequ(char const *s1, char const *s2)
+int			ft_strequ(char const *s1, char const *s2)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!s1 && !s2)

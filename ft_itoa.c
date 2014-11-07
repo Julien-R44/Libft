@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 22:16:23 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/07 11:06:36 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int				how_many_case(unsigned int n, int is_neg)
 {
-	int 				i;
+	int					i;
 
 	i = 0;
 	while ((n /= 10) > 0)
@@ -26,7 +26,7 @@ static int				how_many_case(unsigned int n, int is_neg)
 
 static unsigned int		convert_unsigned_int_and_set_sign(int n, int *is_neg)
 {
-	unsigned int 		da_new;
+	unsigned int		da_new;
 
 	if (n < 0)
 	{
@@ -60,7 +60,7 @@ char					*ft_itoa(int n)
 	if (is_neg)
 		str[i] = '-';
 	if (is_neg)
-		str[i+1] = '\0';
+		str[i + 1] = '\0';
 	else
 		str[i] = '\0';
 	ft_strrev(str);

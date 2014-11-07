@@ -6,16 +6,16 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 11:41:27 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:18:26 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char		*ft_strchr(const char *s, int c)
 {
-	size_t i;
-	char *s1;
+	size_t	i;
+	char	*s1;
 
 	s1 = (char*)s;
 	i = 0;

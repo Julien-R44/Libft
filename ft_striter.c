@@ -6,15 +6,15 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 00:22:45 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:21:52 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+void		ft_striter(char *s, void (*f)(char *))
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s && f)

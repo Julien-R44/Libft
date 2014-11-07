@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 20:20:55 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/07 01:44:43 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/06 20:20:55 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/07 11:19:15 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strclen(char const *s, char c)
+size_t			ft_strclen(char const *s, char c)
 {
-	size_t 		i;
+	size_t		i;
 
 	i = 0;
 	while (s[i])

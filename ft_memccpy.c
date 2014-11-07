@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 04:13:06 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 05:02:32 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:11:29 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		s1[i] = s2[i];
 		if (s2[i] == carac)
-			return (&s1[i+1]);
+			return (&s1[i + 1]);
 		i++;
 	}
 	return (NULL);

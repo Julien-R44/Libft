@@ -6,17 +6,17 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 11:42:33 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:27:08 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char		*ft_strrchr(const char *s, int c)
 {
-	size_t i;
-	char *s1;
-	char *occu;
+	size_t	i;
+	char	*s1;
+	char	*occu;
 
 	occu = NULL;
 	s1 = (char*)s;

@@ -6,13 +6,13 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 03:27:15 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:23:51 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char		*ft_strmap(char const *s, char (*f)(char))
 {
 	size_t	i;
 	size_t	len;

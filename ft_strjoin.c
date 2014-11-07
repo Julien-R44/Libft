@@ -6,16 +6,16 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 13:06:17 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 00:54:28 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:23:00 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char 		*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	char 	*str;
-	size_t 	newsize;
+	char	*str;
+	size_t	newsize;
 
 	if (!s1 || !s2)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:47:52 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/03 14:31:38 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:23:27 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlen(const char *s)
 {
 	size_t i;
 
-	i = 0;	
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);

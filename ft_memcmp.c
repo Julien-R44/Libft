@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/05 14:12:14 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:12:43 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
-	unsigned char *s1c;
-	unsigned char *s2c;
-	int integr;
+	int				integr;
+	size_t			i;
+	unsigned char	*s1c;
+	unsigned char	*s2c;
 
 	i = 0;
 	s1c = (unsigned char *)s1;

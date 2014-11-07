@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 01:15:45 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/04 01:17:17 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:15:30 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 void	ft_putendl(char const *s)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	ft_putstr(s);
 	ft_putchar('\n');
 }

@@ -6,16 +6,16 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:55:35 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 00:33:26 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 11:30:30 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strsub(char const *s, unsigned int start, size_t len)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t i;	
-	char *str;
+	size_t	i;
+	char	*str;
 
 	i = 0;
 	if (!s)
