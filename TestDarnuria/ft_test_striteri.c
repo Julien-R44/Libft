@@ -25,20 +25,11 @@ static int		ft_test_striteri2(char *s, void (*f)(unsigned int, char*))
 	while (i < len)
 	{
 		if (i < 10 && s[i] != (char)toupper(save[i]))
-		{
-			printf("SISI FDP\n");
 			++res;
-		}
-
 		else if (i >= 10 && s[i] != save[i])
-		{
-			printf("+ if 2\n");
 			++res;
-		}
 		++i;
 	}
-	printf("RES == %d\n",res);
-	exit (-1);
 	printf(" { \"%s\" }", s);
 	free(save);
 	ft_print_status(res);
@@ -54,10 +45,7 @@ int		ft_test_striteri(void)
 
 	ft_print_begin("ft_striteri");
 	res += ft_test_striteri2(str1, ft_toupper3);
-	printf("%d\n", res);
 	res += ft_test_striteri2(str2, ft_toupper3);
-	printf("%d\n", res);
 	res += ft_test_striteri2(str3, ft_toupper3);
-	printf("%d\n", res);
 	return (ft_print_end(res));
 }

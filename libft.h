@@ -2,7 +2,7 @@
 # define LIBFT_H
 
 # include <string.h>
-# include <stdio.h>
+# include <stdio.h> // !!!!!!!!!!!!!!!! //
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -34,6 +34,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memalloc(size_t size);
@@ -52,12 +53,14 @@ int		ft_toupper(int c);
 ** Manipulation de chaine de caracteres
 */
 size_t	ft_strlen(const char *s);
+size_t	ft_strclen(char const *s, char c);
 char	*ft_strdup(const char *s1);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strncpy(char *dst, const char *src, size_t n);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 char	*ft_strstr(const char *s1, const char *s2);
+char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -80,12 +83,18 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_strtrim(char const *s);
 
+char	*ft_strrev(char *s);
+
 /*
 ** Listes chainees
 */
 t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstadd_end(t_list **alst, t_list *new);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void	ft_printlist(t_list *list, char sep);
 
 #endif

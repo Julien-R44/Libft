@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 22:00:07 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 00:51:23 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/06 20:21:11 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strclen(char const *s, char c);
 static int		f_how_many_tab(char const *s, char c);
 
 char			**ft_strsplit(char const *s, char c)
@@ -42,16 +41,6 @@ char			**ft_strsplit(char const *s, char c)
 		i++;
 	}
 	return (tab);
-}
-
-static size_t	ft_strclen(char const *s, char c)
-{
-	size_t 		i;
-
-	i = 0;
-	while (s[i] != c)
-		i++;
-	return (i);
 }
 
 static int		f_how_many_tab(char const *s, char c)

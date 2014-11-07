@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 01:50:43 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 22:07:58 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/06 23:39:33 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/07 00:13:10 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void		*ft_memmove(void *dest, const void *src, size_t n)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	char *tmp;
+
+	tmp = (char *)ft_memalloc(sizeof(char) * n);
+	tmp = ft_strncpy(tmp, src, n);
+	dest = ft_strncpy(dest, tmp, n);
+	free(tmp);
+	return (dest);
 }

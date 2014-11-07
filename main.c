@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/05 16:43:32 by yaitalla         ###   ########.fr       */
+/*   Updated: 2014/11/07 00:31:13 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@
 #define LONG	10000
 
 //int	uf_test_strtrim(void);
-//int	uf_test_strsplit(void);
+////int	uf_test_strsplit(void);
 //int	uf_test_strjoin(void);
 //int	uf_test_strsub(void);
-//int	uf_test_itoa(void);
+int	uf_test_itoa(void);
 //int	uf_test_strnequ(void);
 //int	uf_test_strequ(void);
 //int	uf_test_strmapi(void);
@@ -60,29 +60,29 @@
 //int	uf_test_atoi(void);
 //int	uf_test_strncmp(void);
 //int	uf_test_strcmp(void);
-//int	uf_test_strnstr(void);
+////int	uf_test_strnstr(void);
 //int	uf_test_strstr(void);
 //int	uf_test_strrchr(void);
 //int	uf_test_strchr(void);
-//int	uf_test_strlcat(void);
+////int	uf_test_strlcat(void);
 //int	uf_test_strncat(void);
 //int	uf_test_strcat(void);
 //int	uf_test_strncpy(void);
 //int	uf_test_strcpy(void);
 //int	uf_test_strdup(void);
 //int	uf_test_strlen(void);
-//int	uf_test_memmove(void);
+int	uf_test_memmove(void);
 //int	uf_test_memchr(void);
 //int	uf_test_memcmp(void);
-int	uf_test_memccpy(void);
-int	uf_test_memcpy(void);
-int	uf_test_memset(void);
-int	uf_test_bzero(void);
-int	uf_test_lstnew(void);
+//int	uf_test_memccpy(void);
+//int	uf_test_memcpy(void);
+//int	uf_test_memset(void);
+//int	uf_test_bzero(void);
+//int	uf_test_lstnew(void);
 int	uf_test_lstdelone(void);
 int	uf_test_lstdel(void);
 int	uf_test_lstadd(void);
-//int	uf_test_lstiter(void);
+int	uf_test_lstiter(void);
 
 typedef struct	s_test
 {
@@ -120,16 +120,16 @@ int					main(int argc, const char **argv)
  * // #define D_MEMSET
  * // D_ADD_TEST(...)
  */
-#define	D_MEMSET
-	D_ADD_HCTEST(memset);
-#define	D_BZERO
-	D_ADD_HCTEST(bzero);
-#define	D_MEMCPY
-	D_ADD_HCTEST(memcpy);
-#define	D_MEMCCPY
-	D_ADD_HCTEST(memccpy);
-//#define	D_MEMMOVE
-//	D_ADD_HCTEST(memmove);
+//#define	D_MEMSET
+//	D_ADD_HCTEST(memset);
+//#define	D_BZERO
+//	D_ADD_HCTEST(bzero);
+//#define	D_MEMCPY
+//	D_ADD_HCTEST(memcpy);
+//#define	D_MEMCCPY
+//	D_ADD_HCTEST(memccpy);
+#define	D_MEMMOVE
+	D_ADD_HCTEST(memmove);
 //#define	D_MEMCHR
 //	D_ADD_HCTEST(memchr);
 //#define	D_MEMCMP
@@ -146,16 +146,16 @@ int					main(int argc, const char **argv)
 //	D_ADD_TEST(strcat);
 //#define	D_STRNCAT
 //	D_ADD_TEST(strncat);
-//#define	D_STRLCAT
-//	D_ADD_TEST(strlcat);
+////#define	D_STRLCAT
+////	D_ADD_TEST(strlcat);
 //#define	D_STRCHR
 //	D_ADD_TEST(strchr);
 //#define	D_STRRCHR
 //	D_ADD_TEST(strrchr);
 //#define	D_STRSTR
 //	D_ADD_TEST(strstr);
-//#define	D_STRNSTR
-//	D_ADD_TEST(strnstr);
+////#define	D_STRNSTR
+////	D_ADD_TEST(strnstr);
 //#define	D_STRCMP
 //	D_ADD_TEST(strcmp);
 //#define	D_STRNCMP
@@ -200,22 +200,22 @@ int					main(int argc, const char **argv)
 //	D_ADD_TEST(strsub);
 //#define	D_STRJOIN
 //	D_ADD_TEST(strjoin);
-//#define	D_STRSPLIT
-//	D_ADD_TEST(strsplit);
-//#define	D_ITOA
-//	D_ADD_TEST(itoa);
+////#define	D_STRSPLIT
+////	D_ADD_TEST(strsplit);
+#define	D_ITOA
+	D_ADD_TEST(itoa);
 //#define	D_STRTRIM
 //	D_ADD_TEST(strtrim);
-#define	D_LSTNEW
-	D_ADD_TEST(lstnew);
+//#define	D_LSTNEW
+//	D_ADD_TEST(lstnew);
 #define	D_LSTDELONE
 	D_ADD_TEST(lstdelone);
 #define	D_LSTDEL
 	D_ADD_TEST(lstdel);
 #define	D_LSTADD
 	D_ADD_TEST(lstadd);
-//#define	D_LSTITER
-//	D_ADD_TEST(lstiter);
+#define	D_LSTITER
+	D_ADD_TEST(lstiter);
 
 	//FIN DES COMMENTAIRE
 	//

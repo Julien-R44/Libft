@@ -1,34 +1,34 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "../libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+
+void	ft_printlist(t_list *list, char sep)
 {
-	size_t			i;
-	unsigned char	carac;
-	char			*s1;
-	char			*s2;
-
-	i = 0;
-	carac = (unsigned char)c;
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	while (i < n)
+	while (list != NULL)
 	{
-		s1[i] = s2[i];
-		if (s2[i] == carac)
-			return (&s1[i + 1]);
-		i++;
+		ft_putstr((char *)list->content);
+		ft_putchar(sep);
+		list = list->next;
 	}
 }
 
-int main(void)
+int 	main(void)
 {
-	char src[]="Wesh.la famille";
-	char *dst[50];
-	char *ptr;
+	t_list *lst;
+	char str[]="test2";
+	char str2[]="test1";
+	char str3[]="test3";
+	int strclen;
 
-	ptr = ft_memccpy(dst, src, 'h', 5);
-	printf("%s\n", ptr - 1);
+	lst = ft_lstnew(str, ft_strlen(str)); // TEST 2
+	ft_lstadd(&lst, ft_lstnew(str2, ft_strlen(str2))); // TEST 1
+	ft_lstadd_end(&lst, ft_lstnew(str3, ft_strlen(str2))); // TEST 3
+
+	strclen = ft_strclen((char *)lst->content, '1');
+	printf("strlen = %d strclen du char '1' %d\n", (int)ft_strlen((char *)lst->content), strclen);
+	ft_printlist(lst, '\n');
 	
 	return (0);
 }

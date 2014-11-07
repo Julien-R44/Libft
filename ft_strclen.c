@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 01:50:43 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 22:07:58 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/06 20:20:55 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/07 01:44:43 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+size_t	ft_strclen(char const *s, char c)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	size_t 		i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return (i);
+		else
+			i++;
+	}
+	return (-1);
 }

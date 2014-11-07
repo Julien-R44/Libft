@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_end.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 01:50:43 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/06 22:07:58 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/07 01:26:55 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/07 01:27:28 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_end(t_list **alst, t_list *new)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	t_list *last_link;
+
+	if (new && *alst)
+	{
+		last_link = *alst;
+		while (last_link->next != NULL)
+			last_link = last_link->next;
+		last_link->next = new;
+	}
 }

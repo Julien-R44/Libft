@@ -1,6 +1,5 @@
 real-libft42
 ============
-
 // VERIFIER LES PROTOTYPES MAN MAC
 // VERIFIER CAST FONCTIONS GENERIQUES
 // PTR SUR VOID A TESTER AVEC AUTRE TYPE (memset, memcpy, bzero ...)
@@ -14,13 +13,13 @@ real-libft42
 - Une chaine de caractères est TOUJOURS terminée par un ’\0’, même si cela
 a été omis dans la description d’une fonction. Dans le cas contraire, cela serait
 explicitement indiqué.
-
+// ISALPHA ETC.. FAIL TEST MAIN.C UBUNTU
 
 • memset = TEST Ok - ok
 • bzero = TEST Ok - ok
 • memcpy = TEST Ok - ok
 • memccpy = test _ - OK
-• memmove -----------------
+• memmove = test _ - OK
 • memchr = TEST Ok - ok
 • memcmp = TEST Ok - ok
 • strlen = TEST Ok - ok
@@ -33,7 +32,7 @@ explicitement indiqué.
 • strchr = TEST Ok - ok 
 • strrchr = TEST Ok - ok
 • strstr = TEST Ok - ok
-• strnstr --------------------
+• strnstr = FAAAAAAAAAAAAAAAAAILD
 • strcmp = TEST Ok - ok
 • strncmp = TEST Ok - ok
 • atoi = TESTS OK - ok
@@ -61,20 +60,26 @@ explicitement indiqué.
 - ft_strjoin = TEST _ - ok
 - ft_strtrim = TEST _ - ok
 - ft_strsplit = No ---------------------
-- ft_itoa = ~~ no  ----------------
+- ft_itoa = ~~ seem to be ok
 - ft_putchar = TEST Ok
 - ft_putstr = Ok
 - ft_putendl = TEST Ok
-- ft_putnbr = OVERFLOW ITOA
+- ft_putnbr = OK
 - ft_putchar_fd = TEST Ok
 - ft_putstr_fd = TEST Ok
 - ft_putend_fd = TEST Ok
-- ft_putnbr_fd = OVERFLOW ITOA
+- ft_putnbr_fd = OK
 
 // BONUS CHAINED LIST
 - ft_lstnew = Test _ - OK
 - ft_lstdelone = Test _ - OK
 - ft_lstdel = Test _ - OK
-- ft_lstadd
-- ft_lstiter
-- ft_lstmap
+- ft_lstadd = OK
+- ft_lstiter = Ok
+- ft_lstmap = ok
+
+// perso test a faire 
+- ft_strclen = ok
+- ft_strrev = ok 
+- ft_printlist = ok
+- ft_lstadd_end = ok
