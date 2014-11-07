@@ -6,7 +6,11 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 11:03:04 by jripoute          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2014/11/07 19:38:31 by jripoute         ###   ########.fr       */
+=======
+/*   Updated: 2014/11/07 15:17:01 by jripoute         ###   ########.fr       */
+>>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +72,11 @@ size_t				ft_strclen(char const *s, char c);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
+<<<<<<< HEAD
 char				*ft_strcat(char *dest, const char *src);
+=======
+char				*ft_strcat(char *s1, const char *s2);
+>>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strstr(const char *s1, const char *s2);

@@ -6,7 +6,11 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2014/11/07 18:20:24 by jripoute         ###   ########.fr       */
+=======
+/*   Updated: 2014/11/07 15:00:45 by jripoute         ###   ########.fr       */
+>>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+<<<<<<< HEAD
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t i;
@@ -41,6 +46,8 @@ void	*ft_memalloc(size_t size)
 		return (ptr);
 	return (NULL);
 }
+=======
+>>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
 
 
 size_t			ft_strclen(char const *s, char c)
@@ -63,6 +70,7 @@ size_t			ft_strclen(char const *s, char c)
 
 static int		f_how_many_tab(char const *s, char c)
 {
+<<<<<<< HEAD
 	int			how_many_tab;
 	size_t		i;
 
@@ -122,5 +130,12 @@ int main(void)
 	char str[]="**wesh*******les********fdp!";
 	char **tab;
 	
+=======
+	char str[50];
+	int ret;
+
+	ret = strlcat(str, "Hello ", 4);
+	printf("%c\n", str[2]);
+>>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
 	return (0);
 }
