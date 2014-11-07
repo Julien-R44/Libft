@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:42:19 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:05:41 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 12:14:22 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isprint(int c)
 {
-	if (ft_isalnum(c) || (c >= 32 && c <= 126))
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

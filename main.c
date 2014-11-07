@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/07 11:57:02 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 12:02:59 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1185,7 +1185,8 @@ int				uf_test_strcmp(void)
 int				uf_test_strnstr(void)
 {
 	char		*str = "Hello les genw";
-
+	char *res;
+	char *res2;
 
 	if (strnstr(str, "Hello", 6) != ft_strnstr(str, "Hello", 6))
 		D_ERROR;
@@ -1197,8 +1198,11 @@ int				uf_test_strnstr(void)
 		D_ERROR;
 	if (strnstr(str, "w", 0) != ft_strnstr(str, "w", 0))
 		D_ERROR;
-	if (strnstr(str, "", 3) != ft_strnstr(str, "", 3))
+	if ((res = strnstr(str, "", 3)) != (res2 = ft_strnstr(str, "", 3)))
+	{
+		printf("real f = %s, my f = %s\n", res, res2);
 		D_ERROR;
+	}
 	return (1);
 }
 #endif
