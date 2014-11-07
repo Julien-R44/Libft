@@ -28,11 +28,11 @@ explicitement indiqué.
 • strncpy = TEST Ok - ok 
 • strcat = TEST Ok - ok
 • strncat = TEST Ok - ok
-• strlcat----------------------
+• strlcat = test ok 
 • strchr = TEST Ok - ok 
 • strrchr = TEST Ok - ok
 • strstr = TEST Ok - ok
-• strnstr = FAAAAAAAAAAAAAAAAAILD
+• strnstr = Test ok
 • strcmp = TEST Ok - ok
 • strncmp = TEST Ok - ok
 • atoi = TESTS OK - ok
@@ -60,7 +60,7 @@ explicitement indiqué.
 - ft_strjoin = TEST _ - ok
 - ft_strtrim = TEST _ - ok
 - ft_strsplit = No ---------------------
-- ft_itoa = ~~ seem to be ok
+- ft_itoa = ok
 - ft_putchar = TEST Ok
 - ft_putstr = Ok
 - ft_putendl = TEST Ok

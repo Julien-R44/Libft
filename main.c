@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/07 12:02:59 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 14:37:57 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	uf_test_strnstr(void);
 int	uf_test_strstr(void);
 int	uf_test_strrchr(void);
 int	uf_test_strchr(void);
-////int	uf_test_strlcat(void);
+int	uf_test_strlcat(void);
 int	uf_test_strncat(void);
 int	uf_test_strcat(void);
 int	uf_test_strncpy(void);
@@ -146,8 +146,8 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(strcat);
 #define	D_STRNCAT
 	D_ADD_TEST(strncat);
-////#define	D_STRLCAT
-////	D_ADD_TEST(strlcat);
+#define	D_STRLCAT
+	D_ADD_TEST(strlcat);
 #define	D_STRCHR
 	D_ADD_TEST(strchr);
 #define	D_STRRCHR
