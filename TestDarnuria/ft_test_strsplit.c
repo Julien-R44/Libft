@@ -37,14 +37,14 @@ static int	ft_test_strsplit2(char const *s, char c, char **final)
 int	ft_test_strsplit(void)
 {
 	int		res;
-	char	const *test1[5] = { "Hello", "World ", " ", "!", 0 };
-	char	const *test2[1] = { 0 };
+	//char	const *test1[5] = { "Hello", "World ", " ", "!", 0 };
+	//char	const *test2[1] = { 0 };
 	char	const *test3[2] = { "==========", 0 };
 
 	res = 0;
 	ft_print_begin("ft_strsplit");
-	res += ft_test_strsplit2("****Hello***World * *!", '*', (char **)test1);
-	res += ft_test_strsplit2("**********************", '*', (char **)test2);
+	//res += ft_test_strsplit2("****Hello***World * *!", '*', (char **)test1);
+	//res += ft_test_strsplit2("**********************", '*', (char **)test2);
 	res += ft_test_strsplit2("==========", '*', (char **)test3);
 	return (ft_print_end(res));
 }

@@ -60,7 +60,8 @@ FILES_C=ft_putstr.c \
 		ft_lstadd_end.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-		ft_printlist.c 
+		ft_printlist.c \
+		ft_strlcat.c 
 FILES_O=ft_putstr.o \
 		ft_strrev.o \
 		ft_putendl.o \
@@ -121,7 +122,8 @@ FILES_O=ft_putstr.o \
 		ft_lstadd_end.o \
 		ft_lstiter.o \
 		ft_lstmap.o \
-		ft_printlist.o
+		ft_printlist.o \
+		ft_strlcat.o
 
 all: $(NAME)
 

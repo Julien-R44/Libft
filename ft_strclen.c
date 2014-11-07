@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 20:20:55 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:19:15 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 17:21:24 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ size_t			ft_strclen(char const *s, char c)
 		else
 			i++;
 	}
+	if (c == '\0' && !s[i])
+		return (i);
 	return (-1);
 }

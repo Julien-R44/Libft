@@ -6,11 +6,12 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 22:00:07 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:29:17 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 19:22:44 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int		f_how_many_tab(char const *s, char c)
 {
@@ -51,8 +52,11 @@ char			**ft_strsplit(char const *s, char c)
 		if (s[i] == c && s[i + 1] && s[i + 1] != c)
 		{
 			lenght = ft_strclen(&s[i + 1], c);
+			if ((int)lenght == -1)
+				lenght = ft_strclen(&s[i + 1], '\0');
 			tab[j] = (char *)ft_memalloc(sizeof(char *) * lenght + 1);
 			ft_strncpy(tab[j], &s[i + 1], lenght);
+			i += lenght;
 			j++;
 		}
 		i++;

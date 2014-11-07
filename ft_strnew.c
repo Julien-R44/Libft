@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:26:20 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 18:03:02 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_strnew(size_t size)
 {
 	char *str;
 
-	str = ft_memalloc(size);
-	ft_memset(str, '\0', size);
+	str = (char *)ft_memalloc(size + 1);
 	return (str);
 }

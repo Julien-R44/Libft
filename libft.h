@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 11:03:04 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:45:29 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/07 19:38:31 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 /*
-** Traitements et conditions alphanumeriques
+** Traitements et conditions alphanumeriques]
 */
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -69,6 +69,7 @@ char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
