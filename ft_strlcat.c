@@ -3,49 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 01:01:28 by jripoute          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2014/11/07 17:10:36 by jripoute         ###   ########.fr       */
-=======
-/*   Updated: 2014/11/07 15:16:02 by jripoute         ###   ########.fr       */
->>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
+/*   Created: 2014/11/08 00:49:10 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/08 00:49:16 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-<<<<<<< HEAD
-size_t			ft_strlcat(char *dst, const char *src, size_t size)
-{
-	char		*d;
-	const char	*s;
-	size_t		n;
-	size_t		dlen;
-
-	d = dst;
-	s = src;
-	n = size;
-	while (n-- && *d)
-		d++;
-	dlen = d - dst;
-	n = size - dlen;
-	if (!n)
-		return (dlen + ft_strlen(s));
-	while (*s)
-	{
-		if (n != 1)
-		{
-			*d++ = *s;
-			n--;
-		}
-		s++;
-	}
-	*d = '\0';
-	return (dlen + (s - src));
-}
-=======
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
@@ -71,4 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	return (result);
 }
->>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
