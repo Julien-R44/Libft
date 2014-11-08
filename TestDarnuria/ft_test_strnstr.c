@@ -31,5 +31,7 @@ int	ft_test_strnstr(void)
 	res += ft_test_strnstr2("", "e", 1);
 	res += ft_test_strnstr2("Bonjour ", "Bonjour", 7);
 	res += ft_test_strnstr2("Bonjour", "bonjour", 7);
+	res += ft_test_strnstr2("WeshFDP", "FDP", 4);
+	res += ft_test_strnstr2("WeshFDP", "FDP", 8);
 	return (ft_print_end(res));
 }

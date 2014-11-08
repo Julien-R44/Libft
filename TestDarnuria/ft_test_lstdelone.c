@@ -8,6 +8,7 @@ static void	ft_test_lstdelone2_del(void *content, size_t content_size)
 	char	**str;
 
 	str = (char **)content;
+	ft_putstr("TEST2");
 	if (*str && content_size == strlen(*str))
 		g_is_delete = 1;
 }
@@ -26,6 +27,7 @@ int	ft_test_lstdelone(void)
 	elem->content_size = strlen(str);
 	g_is_delete = 0;
 	ft_lstdelone(&elem, ft_test_lstdelone2_del);
+	ft_putstr("SISI");
 	if (elem || !g_is_delete)
 		++res;
 	if (elem)

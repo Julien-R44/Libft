@@ -3,33 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 20:04:50 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/07 17:11:34 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/08 19:07:23 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	size_t j;
+	char	*s1_;
+	size_t	i;
+	size_t	j;
 
-	j = 0;
 	i = 0;
+	j = 0;
 	if (!s2 || !s2[0])
 		return ((char *)s1);
-	while (s1[i] && i < n)
+	s1_ = (char *)s1;
+	while (s1_[i] && i < n)
 	{
-		if (s1[i] == s2[j])
+		while (s1_[i + j] == s2[j] && i + j < n)
+		{
+			printf("TOUR = %d, s1 comp = %c et s2 comp = %c \n", (int)j, (char)s1_[i + j], (char)s2[j]);
 			j++;
-		else
-			j = 0;
+		}
 		if (!s2[j])
-			return ((char *)s1 + (i - (j - 1)));
+		{
+			printf("RET = '%s'\n", &((char*)s1)[i]);
+			return ( &((char*)s1)[i] );
+		}
+		j = 0;
 		i++;
 	}
 	return (NULL);

@@ -26,5 +26,6 @@ int	ft_test_strstr(void)
 	res += ft_test_strstr2("Bonjour", "Bonjour ");
 	res += ft_test_strstr2("bonjour", "");
 	res += ft_test_strstr2("bonjour", "r\0");
+	res += ft_test_strstr2("tvaaabcd", "aabcd\0");
 	return (ft_print_end(res));
 }

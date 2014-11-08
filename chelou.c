@@ -1,141 +1,74 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   chelou.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:50:44 by jripoute          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2014/11/07 18:20:24 by jripoute         ###   ########.fr       */
-=======
-/*   Updated: 2014/11/07 15:00:45 by jripoute         ###   ########.fr       */
->>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <string.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
-<<<<<<< HEAD
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (i < len)
 	{
-		dst[i] = src[i];
+		((char*)b)[i] = c;
 		i++;
 	}
-	while (n > i)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (b);
 }
 
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+{
+	char	*s1_;
+	char	*here;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (!s2 || !s2[0])
+		return ((char *)s1);
+	s1_ = (char *)s1;
+	while (s1_[i] && i < n)
+	{
+		while (s1_[i + j] == s2[j] && i + j < n)
+		{
+			printf("s1 comp = %c et s2 comp = %c \n", (char)s1_[i + j], (char)s2[j]);
+			j++;
+		}
+		if (!s2[j])
+			return ( &((char*)s1)[i] );
+		j = 0;
+		i++;
+	}
+	return (NULL);
+}
 
 void	*ft_memalloc(size_t size)
 {
 	void *ptr;
 
-	if ((ptr = malloc(size)) != NULL)
-		return (ptr);
-	return (NULL);
-}
-=======
->>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
-
-
-size_t			ft_strclen(char const *s, char c)
-{
-	size_t		i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return (i);
-		else
-			i++;
-	}
-	if (c == '\0' && !s[i])
-		return (i);
-	return (-1);
+	printf("%d\n", (int)size);
+	ptr = (void *)malloc(size);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr, '\0', size);
+	return (ptr);
+	
 }
 
-
-static int		f_how_many_tab(char const *s, char c)
+void	ft_memdel(void **ap)
 {
-<<<<<<< HEAD
-	int			how_many_tab;
-	size_t		i;
-
-	how_many_tab = 0;
-	i = 0;
-	while (s[i])
+	if (ap)
 	{
-		if (s[i] == c)
-		{
-			if (s[i + 1] && s[i + 1] != c)
-				how_many_tab++;
-		}
-		i++;
+		free(*ap);
+		*ap = NULL;
 	}
-	return (how_many_tab);
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	int			how_many_tab;
-	char		**tab;
-	size_t		lenght;
-	size_t		i;
-	size_t		j;
-
-	if (!s[0] || !c)
-	{
-		tab = (char **)malloc(sizeof(char *));
-		tab[0] = (char *)malloc(sizeof(char));
-		tab[0][0] = '\0';
-		return (tab);
-	}
-	i = 0;
-	j = 0;
-	lenght = 0;
-	how_many_tab = f_how_many_tab(s, c);
-	tab = (char **)ft_memalloc(sizeof(tab) * how_many_tab + 1);
-	while (s[i])
-	{
-		if (s[i] == c && s[i + 1] && s[i + 1] != c)
-		{
-			lenght = ft_strclen(&s[i + 1], c);
-			if (lenght == -1)
-				lenght = ft_strclen(&s[i + 1], '\0');
-			tab[j] = (char *)ft_memalloc(sizeof(char *) * lenght + 1);
-			ft_strncpy(tab[j], &s[i + 1], lenght);
-			i += lenght;
-			j++;
-		}
-		i++;
-	}
-	return (tab);
 }
 
 int main(void)
 {
-	char str[]="**wesh*******les********fdp!";
-	char **tab;
-	
-=======
-	char str[50];
-	int ret;
+	void *ptr;
 
-	ret = strlcat(str, "Hello ", 4);
-	printf("%c\n", str[2]);
->>>>>>> ae01d46dc3c61a2cf309bef4047331a5d4ac7d21
+	ptr = ft_memalloc(1024);
+	ft_memdel(&ptr);
 	return (0);
 }

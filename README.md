@@ -1,19 +1,12 @@
 real-libft42
 ============
+
 // VERIFIER LES PROTOTYPES MAN MAC
 // VERIFIER CAST FONCTIONS GENERIQUES
-// PTR SUR VOID A TESTER AVEC AUTRE TYPE (memset, memcpy, bzero ...)
-// TEST BY DARNURIA-TESTS & other main
 // NORMINETTE / FLAGS
-// STATIC FUNCTIONS
-// ITOA POUR PUTNBR ET PUTNBR_FD -> GERER OVERFLOW ITOA
-// Ft_strclen -> ft_strsplit
 // INCLUDES STDIO ET STRINGS.H
 // FICHIER AUTEUR 
-- Une chaine de caractères est TOUJOURS terminée par un ’\0’, même si cela
-a été omis dans la description d’une fonction. Dans le cas contraire, cela serait
-explicitement indiqué.
-// ISALPHA ETC.. FAIL TEST MAIN.C UBUNTU
+// memallocdel, strldel, strldel_one, strnstr, strlcat <!>, strsplit
 
 • memset = TEST Ok - ok
 • bzero = TEST Ok - ok

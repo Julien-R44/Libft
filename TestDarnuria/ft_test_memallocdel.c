@@ -8,6 +8,7 @@ int	ft_test_memallocdel(void)
 	res = 0;
 	ft_print_begin("ft_memalloc");
 	ptr = ft_memalloc(1024);
+	printf("Wesh\n");
 	ft_print_end(res);
 	ft_print_begin("ft_memdel");
 	ft_memdel(&ptr);
