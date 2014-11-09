@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 20:55:10 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/08 19:15:13 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/09 06:57:42 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ void	*ft_memalloc(size_t size)
 		return (NULL);
 	ft_memset(ptr, '\0', size);
 	return (ptr);
-	
 }

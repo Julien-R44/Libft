@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 00:49:10 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/08 19:32:03 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/09 07:23:19 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	while (i < size)
 	{
 		if (dst[i] == '\0')
-			break;
+			break ;
 		i++;
 	}
 	result = i + ft_strlen(src);
