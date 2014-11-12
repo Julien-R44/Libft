@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 01:57:29 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:36:16 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/12 16:32:32 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ char		*ft_strtrim(char const *s)
 	nblanks_end = end_blanks(s, len);
 	if (ft_strlen(s) == nblanks_start)
 	{
-		newstr = (char *)malloc(sizeof(char));
+		newstr = (char *)ft_memalloc(sizeof(char));
+		if (!newstr)
+			return (NULL);
 		newstr[0] = '\0';
 		return (newstr);
 	}
