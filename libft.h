@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/12 16:34:16 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/14 00:35:01 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,22 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+// LINKED LIST
 typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+// DOUBLE LINKED LIST 
+typedef struct		s_dlist
+{
+	void			*content;
+	size_t			content_size;
+	struct s_dlist	*next;
+	struct s_dlist	*before;
+}					t_dlist;
 
 /*
 ** Affichages
@@ -109,5 +119,15 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_printlist(t_list *list, char sep);
+
+/*
+** Double liste chainees
+*/
+t_dlist				*ft_dlstnew(void const *content, size_t content_size);
+void				ft_dlstadd(t_dlist **alst, t_dlist *new);
+void				ft_dlstadd_end(t_dlist **alst, t_dlist *new);
+void				ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t));
+void				ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t));
+void				ft_printdlist(t_dlist *list, char sep);
 
 #endif

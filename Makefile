@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
+#    By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2014/11/11 07:41:53 by jripoute         ###   ########.fr        #
+#    Updated: 2014/11/14 00:36:36 by y0ja             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ ft_strchr.c ft_strrchr.c ft_strmap.c ft_strmapi.c ft_strcmp.c ft_strncmp.c \
 ft_atoi.c ft_itoa.c ft_memalloc.c ft_memdel.c ft_memchr.c ft_memcmp.c ft_strnew.c \
 ft_strdel.c ft_strsplit.c ft_strtrim.c ft_strclr.c ft_striter.c ft_striteri.c ft_strequ.c \
 ft_strnequ.c ft_strsub.c ft_strjoin.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
-ft_lstadd_end.c ft_lstiter.c ft_lstmap.c ft_printlist.c ft_strlcat.c
+ft_lstadd_end.c ft_lstiter.c ft_lstmap.c ft_printlist.c ft_strlcat.c ft_dlstadd.c \
+ft_dlstadd_end.c ft_dlstnew.c ft_dlstdel.c ft_dlstdelone.c ft_printdlist.c 
 FILES_O=$(FILES_C:.c=.o)
 
 all: $(NAME)
