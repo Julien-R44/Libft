@@ -3,38 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 20:38:02 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/11 09:03:32 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/13 00:48:19 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	size_t			i;
-	size_t			j;
-	unsigned char	*s1_;
-	unsigned char	*s2_;
+	const	char	*tmp1;
+	const	char	*tmp2;
 
-	s1_ = (unsigned char *)s1;
-	s2_ = (unsigned char *)s2;
-	i = 0;
-	j = 0;
-	if (!s2[0] || s2 == NULL)
-		return ((char *)s1);
-	while (s1_[i])
+	if (*to_find == 0)
+		return ((char *)str);
+	while (*str != 0)
 	{
-		while (s1_[i + j] == s2_[j])
+		tmp1 = str;
+		tmp2 = to_find;
+		while (*tmp1 == *tmp2 && *tmp1 != 0 && *tmp2 != 0)
 		{
-			j++;
-			if (!s2_[j])
-				return (&((char *)s1_)[i]);
+			tmp1++;
+			tmp2++;
 		}
-		j = 0;
-		i++;
+		if (*tmp2 == 0)
+			return ((char *)str);
+		str++;
 	}
-	return (NULL);
+	return (0);
 }

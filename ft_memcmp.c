@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:12:43 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/13 00:10:00 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int				integr;
-	size_t			i;
-	unsigned char	*s1c;
-	unsigned char	*s2c;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-	i = 0;
-	s1c = (unsigned char *)s1;
-	s2c = (unsigned char *)s2;
-	integr = 0;
-	while (i < n)
+	if (!s1 || !s2)
+		return (0);
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
+	while (n--)
 	{
-		integr += (s1c[i] - s2c[i]);
-		if (s1c[i] != s2c[i])
-			return ((int)(s1c[i] - s2c[i]));
-		i++;
+		if (*p1 != *p2)
+			return ((unsigned char)*p1 - (unsigned char)*p2);
+		p1++;
+		p2++;
 	}
 	return (0);
 }

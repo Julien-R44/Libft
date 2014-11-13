@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclen.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: srabah <srabah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 20:20:55 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/12 22:47:46 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/03 20:06:45 by srabah            #+#    #+#             */
+/*   Updated: 2014/11/07 18:15:03 by srabah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_strclen(char const *s, char c)
+void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
-	size_t		i;
+	char	*c1;
+	char	*c2;
 
-	i = 0;
-	if (!s)
-		return (-1);
-	while (s[i])
-	{
-		if (s[i] == c)
-			return (i);
-		else
-			i++;
-	}
-	if (c == '\0' && !s[i])
-		return (i);
-	return (-1);
+	if (n == 0 || s1 == s2)
+		return (s1);
+	c1 = (char *)s1;
+	c2 = (char *)s2;
+	while (--n)
+		*c1++ = *c2++;
+	*c1 = *c2;
+	return (s1);
 }

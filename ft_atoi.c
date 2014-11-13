@@ -3,65 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 20:34:00 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/12 18:30:40 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/13 01:34:46 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		skip_space(const char *s, int i, int *is_neg)
+int	ft_atoi(const char *str)
 {
-	while ((s[i] == ' ' || s[i] == '-' || s[i] == '+') ||
-	(s[i] >= 9 && s[i] <= 13))
-	{
-		if (*is_neg)
-			return (0);
-		if (s[i] == '-')
-		{
-			if (*is_neg)
-				return (0);
-			*is_neg = -1;
-		}
-		else if (s[i] == '+')
-		{
-			if (*is_neg)
-				return (0);
-			*is_neg = 1;
-		}
-		i++;
-	}
-	if (*is_neg == 0)
-		*is_neg = 1;
-	return (i);
-}
+	int	sign;
+	int	nb;
 
-int				ft_atoi(const char *str)
-{
-	int			i;
-	int			result;
-	int			value;
-	int			is_neg;
-
-	if (str == NULL)
+	sign = 1;
+	nb = 0;
+	if (!str)
 		return (0);
-	i = 0;
-	result = 0;
-	value = 0;
-	is_neg = 0;
-	i = skip_space(str, i, &is_neg);
-	while (str[i] != '\0')
+	while (*str == ' ' || *str == '\n' || *str == '\v'
+			|| *str == '\t' || *str == '\r' || *str == '\f')
+		++str;
+	if (*str == '-')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			result = str[i] - '0';
-			value = (value * 10) + result;
-		}
-		else
-			return (value * is_neg);
-		i++;
+		sign = -1;
+		++str;
 	}
-	return (value * is_neg);
+	else if (*str == '+')
+		++str;
+	while (*str >= '0' && *str <= '9')
+	{
+		nb = nb * 10;
+		nb = nb + (*str - '0');
+		++str;
+	}
+	return (sign * nb);
 }

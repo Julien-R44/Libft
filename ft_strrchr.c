@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/07 11:27:08 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/13 00:33:12 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 char		*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	char	*s1;
-	char	*occu;
+	int i;
+	int mem;
 
-	occu = NULL;
-	s1 = (char*)s;
 	i = 0;
-	while (s1[i])
+	mem = -1;
+	while (s[i] != '\0')
 	{
-		if (s1[i] == (char)c)
-			occu = &s1[i];
+		if ((char)c == s[i])
+			mem = i;
 		i++;
 	}
-	if (c == '\0')
-		if (s1[i] == '\0')
-			return (&s1[i]);
-	if (occu)
-		return (occu);
+	if (c == '\0' && s[i] == '\0')
+		return ((char*)&s[i]);
+	if (mem != -1)
+		return ((char *)&s[mem]);
 	return (NULL);
 }
