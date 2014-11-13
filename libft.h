@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/14 00:35:01 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/14 00:42:38 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// LINKED LIST
+/*
+** Simple linked list, and double linked list
+*/
 typedef struct		s_list
 {
 	void			*content;
@@ -25,7 +27,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-// DOUBLE LINKED LIST 
 typedef struct		s_dlist
 {
 	void			*content;
