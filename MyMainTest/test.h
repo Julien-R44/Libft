@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:15:36 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/13 02:21:06 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/14 01:13:07 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ typedef enum e_func
 	STRSTR,
 	IS_ALL,
 	ITOA,
+	D_LST,
+	STRNDUP,
 }			e_funcz;
 
 typedef struct	s_test
 {
-	char *f_name;
-	int er;
+	char	*f_name;
+	int 	er;
 }				t_test;
 
 // Global t_test
@@ -51,7 +53,7 @@ void	ft_test_is_all(void);
 void	ft_test_strclen(void);
 void	ft_test_memccpy(void);
 void	ft_test_lstadd_end_print(void);
-
-
+void	ft_test_double_list(void);
+void	ft_test_strndup(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:19:38 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/13 02:21:02 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/14 01:15:23 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,12 @@ int		main(void)
 		ft_test_strrev();
 	#define FT_TEST_STRCLEN
 		ft_test_strclen();
+	#define FT_TEST_STRNDUP
+		ft_test_strndup();
 	#define FT_LSTADD_END_PRINT
 		ft_test_lstadd_end_print();
+	#define FT_TEST_DOUBLE_LIST
+		ft_test_double_list();
 	return (0);
 }
 
@@ -61,6 +65,10 @@ void	get_f_name(int f_name)
 		tab.f_name = strdup("ft_strclen");
 	else if (f_name == STRSTR)
 		tab.f_name = strdup("ft_strstr");
+	else if (f_name == D_LST)
+		tab.f_name = strdup("D_LIST test");
+	else if (f_name == STRNDUP)
+		tab.f_name = strdup("ft_strndup");
 }
 
 void	print_result_test(void)
@@ -82,6 +90,54 @@ void	error_sys(int er)
 void	error(void)
 {
 	tab.er = 1;
+}
+
+void	ft_test_strndup(void)
+{
+	char str[]="u will fail;;;";
+	char str2[]="blah blah blaaah";
+	char *newz;
+	char *real;
+
+	#ifdef TRY_SEGFAULT_THIS_SHIT
+	ft_strndup(NULL, -1);
+	ft_strndup(real, 400);
+	#endif
+	newz = ft_strndup(str, 4);
+	real = strndup(str, 4);
+	get_f_name(STRNDUP);
+	if (strcmp(newz, real) != 0)
+		error();
+	newz = ft_strndup(str2, 50);
+	real = strndup(str2, 50);
+	if (strcmp(newz, real) != 0)
+		error();
+	free(newz);
+	free(real);
+	print_result_test();
+}
+
+void	ft_test_double_list(void)
+{
+	char str[]="second link";
+	char str2[]="first link";
+	char str3[]="end link";
+	t_dlist *d_lst;
+
+	#ifdef TRY_SEGFAULT_THIS_SHIT
+	#endif
+	get_f_name(D_LST);
+	d_lst = ft_dlstnew(str, (ft_strlen(str) + 1));
+	ft_dlstadd(&d_lst, ft_dlstnew(str2, (ft_strlen(str2) + 1)));
+	ft_dlstadd_end(&d_lst, ft_dlstnew(str3 , (ft_strlen(str3) + 1)));
+	ft_dlstdelone(&d_lst->next, NULL);
+	if (strcmp((char *)d_lst->content, "first link") != 0)
+		error();
+	if (strcmp((char *)d_lst->next->content, "end link") != 0)
+		error();
+	//ft_printdlist(d_lst, '-');
+	ft_dlstdel(&d_lst, NULL);
+	print_result_test();
 }
 
 void	ft_test_strstr(void)
@@ -140,9 +196,9 @@ void	ft_test_lstadd_end_print(void)
 	list3->content_size = (sizeof(char) * ft_strlen(list3->content) + 1);
 	list3->next = NULL;
 	ft_lstadd_end(&list, list3);
-	printf("\n");
-	ft_printlist(list, '-');
-	printf("\n");
+	//printf("\n");
+	//ft_printlist(list, '-');
+	//printf("\n");
 	if (strcmp(list->content, " second link add before ") != 0)
 		error();
 	if (strcmp(list->next->content, " first link added ") != 0)

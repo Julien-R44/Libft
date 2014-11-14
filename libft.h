@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/14 00:42:38 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/14 01:37:04 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct		s_dlist
 {
 	void			*content;
 	size_t			content_size;
-	struct s_dlist	*next;
 	struct s_dlist	*before;
+	struct s_dlist	*next;
 }					t_dlist;
 
 /*
@@ -52,6 +52,17 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 /*
+** Traitements et conditions alphanumeriques]
+*/
+int					ft_isalnum(int c);
+int					ft_isalpha(int c);
+int					ft_isascii(int c);
+int					ft_isdigit(int c);
+int					ft_isprint(int c);
+int					ft_tolower(int c);
+int					ft_toupper(int c);
+
+/*
 ** Memory
 */
 void				ft_bzero(void *s, size_t n);
@@ -64,16 +75,6 @@ void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 
-/*
-** Traitements et conditions alphanumeriques]
-*/
-int					ft_isalnum(int c);
-int					ft_isalpha(int c);
-int					ft_isascii(int c);
-int					ft_isdigit(int c);
-int					ft_isprint(int c);
-int					ft_tolower(int c);
-int					ft_toupper(int c);
 
 /*
 ** Manipulation de chaine de caracteres
@@ -81,6 +82,7 @@ int					ft_toupper(int c);
 size_t				ft_strlen(const char *s);
 size_t				ft_strclen(char const *s, char c);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
