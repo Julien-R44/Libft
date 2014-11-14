@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+         #
+#    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2014/11/14 01:11:20 by y0ja             ###   ########.fr        #
+#    Updated: 2014/11/14 16:29:04 by jripoute         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ ft_atoi.c ft_itoa.c ft_memalloc.c ft_memdel.c ft_memchr.c ft_memcmp.c ft_strnew.
 ft_strdel.c ft_strsplit.c ft_strtrim.c ft_strclr.c ft_striter.c ft_striteri.c ft_strequ.c \
 ft_strnequ.c ft_strsub.c ft_strjoin.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
 ft_lstadd_end.c ft_lstiter.c ft_lstmap.c ft_printlist.c ft_strlcat.c ft_dlstadd.c \
-ft_dlstadd_end.c ft_dlstnew.c ft_dlstdel.c ft_dlstdelone.c ft_printdlist.c ft_strndup.c 
+ft_dlstadd_end.c ft_dlstnew.c ft_dlstdel.c ft_dlstdelone.c ft_printdlist.c ft_strndup.c \
+ft_isspace.c ft_lstlen.c ft_dlstlen.c ft_lstati.c ft_lstlast.c ft_lstadd_i.c ft_strchrstr.c
 FILES_O=$(FILES_C:.c=.o)
 
 all: $(NAME)

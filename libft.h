@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/14 01:37:04 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/14 16:28:08 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+int					ft_isspace(int c);
 
 /*
 ** Memory
@@ -74,7 +75,6 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
-
 
 /*
 ** Manipulation de chaine de caracteres
@@ -110,6 +110,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strtrim(char const *s);
 char				*ft_strrev(char *s);
+char				*ft_strchrstr(const char *s1, const char *s2);
 
 /*
 ** Listes chainees
@@ -117,6 +118,10 @@ char				*ft_strrev(char *s);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstadd_end(t_list **alst, t_list *new);
+void				ft_lstadd_i(t_list **list, t_list *lst_new, unsigned int n);
+int					ft_lstlen(t_list *list);
+t_list				*ft_lstati(t_list *lst, unsigned int i);
+t_list				*ft_lstlast(t_list *list);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
@@ -129,6 +134,7 @@ void				ft_printlist(t_list *list, char sep);
 t_dlist				*ft_dlstnew(void const *content, size_t content_size);
 void				ft_dlstadd(t_dlist **alst, t_dlist *new);
 void				ft_dlstadd_end(t_dlist **alst, t_dlist *new);
+int					ft_dlstlen(t_dlist *list);
 void				ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_printdlist(t_dlist *list, char sep);

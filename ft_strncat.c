@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/09 07:41:34 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/13 16:14:54 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 char		*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	size_t	end_of_dest;
+	size_t i;
+	size_t j;
 
 	i = 0;
-	end_of_dest = ft_strlen(s1);
-	while (s2[i] && i < n)
-	{
-		s1[end_of_dest + i] = s2[i];
+	j = 0;
+	while (s1[i] != '\0')
 		i++;
-	}
-	s1[end_of_dest + i] = '\0';
+	while (s2[j] != '\0' && j < n)
+		s1[i++] = s2[j++];
+	s1[i] = '\0';
 	return (s1);
 }

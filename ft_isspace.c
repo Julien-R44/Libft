@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 20:55:10 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/13 16:23:39 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/14 13:08:04 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/14 17:02:42 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_isspace(int c)
 {
-	void *ptr;
-
-	ptr = malloc(size);
-	if (!ptr)
-		return (NULL);
-	ft_memset(ptr, '\0', size);
-	return (ptr);
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
+		|| c == '\r' || c == ' ')
+		return (1);
+	return (0);
 }

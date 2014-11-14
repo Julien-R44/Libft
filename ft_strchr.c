@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/09 08:00:26 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/13 14:55:50 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 char		*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	char	*s1;
-	char	cp;
+	int i;
+	int mem;
 
-	s1 = (char*)s;
-	cp = (char)c;
 	i = 0;
-	while (s1[i])
+	mem = -1;
+	while (s[i] != '\0')
 	{
-		if (s1[i] == cp)
-			return (&s1[i]);
+		if ((char)c == s[i])
+			mem = i;
 		i++;
 	}
-	if (cp == '\0')
-		if (s1[i] == '\0')
-			return (&s1[i]);
+	if (c == '\0' && s[i] == '\0')
+		return ((char*)&s[i]);
+	if (mem != -1)
+		return ((char *)&s[mem]);
 	return (NULL);
 }

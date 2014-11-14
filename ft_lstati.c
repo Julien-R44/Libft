@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstati.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 20:55:10 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/13 16:23:39 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/14 14:36:19 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/14 17:03:01 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+t_list	*ft_lstati(t_list *list, unsigned int i)
 {
-	void *ptr;
+	t_list *nav;
 
-	ptr = malloc(size);
-	if (!ptr)
-		return (NULL);
-	ft_memset(ptr, '\0', size);
-	return (ptr);
+	nav = list;
+	while (nav && (i - 1))
+	{
+		i--;
+		nav = nav->next;
+	}
+	return (nav);
 }

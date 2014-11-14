@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strchrstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 20:55:10 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/13 16:23:39 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/14 16:23:04 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/14 17:04:11 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+char		*ft_strchrstr(const char *s1, const char *s2)
 {
-	void *ptr;
+	int		i;
+	int		j;
+	char	*here;
 
-	ptr = malloc(size);
-	if (!ptr)
-		return (NULL);
-	ft_memset(ptr, '\0', size);
-	return (ptr);
+	i = 0;
+	j = 0;
+	here = NULL;
+	while (s1[i])
+	{
+		while (s2[j])
+		{
+			if (s1[i] == s2[j])
+				return (here = &((char *)s1)[i]);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (NULL);
 }

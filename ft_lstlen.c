@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 20:55:10 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/13 16:23:39 by jripoute         ###   ########.fr       */
+/*   Created: 2014/11/14 14:28:41 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/14 17:03:29 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_lstlen(t_list *list)
 {
-	void *ptr;
+	t_list	*nav;
+	int		i;
 
-	ptr = malloc(size);
-	if (!ptr)
-		return (NULL);
-	ft_memset(ptr, '\0', size);
-	return (ptr);
+	i = 0;
+	nav = list;
+	while (nav)
+	{
+		i++;
+		nav = nav->next;
+	}
+	return (i);
 }

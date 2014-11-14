@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:45:07 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/12 23:58:24 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/13 12:57:34 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	ft_bzero(void *s, size_t n)
 	size_t i;
 
 	i = 0;
-	if (!s)
-		return ;
 	while (i < n)
-	{
-		((unsigned char*)s)[i] = '\0';
-		i++;
-	}
+		((unsigned char *)s)[i++] = '\0';
 }

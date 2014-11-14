@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   MyMainTest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:19:38 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/14 01:15:23 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/14 16:56:23 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-// #define TRY_SEGFAULT_THIS_SHIT
+//#define TRY_SEGFAULT_THIS_SHIT
 #define TRY_OCTAL_SET
 
 int		main(void)
@@ -21,8 +21,8 @@ int		main(void)
 		ft_test_atoi();
 	#define	FT_TEST_BZERO
 		ft_test_bzero();
-	// #define FT_TEST_IS_ALL
-		// ft_test_is_all(); // not the same return on ubuntu and mac osx
+	#define FT_TEST_IS_ALL
+		ft_test_is_all();
 	#define FT_TEST_ITOA
 		ft_test_itoa();
 	#define FT_TEST_MEMCCPY
@@ -41,6 +41,10 @@ int		main(void)
 		ft_test_lstadd_end_print();
 	#define FT_TEST_DOUBLE_LIST
 		ft_test_double_list();
+	#define FT_TEST_LIST_I
+		ft_test_list_i();
+	#define FT_TEST_STRCHRSTR
+		ft_test_strchrstr();
 	return (0);
 }
 
@@ -69,6 +73,10 @@ void	get_f_name(int f_name)
 		tab.f_name = strdup("D_LIST test");
 	else if (f_name == STRNDUP)
 		tab.f_name = strdup("ft_strndup");
+	else if (f_name == LIST_I)
+		tab.f_name = strdup("FT LIST I");
+	else if (f_name == STRCHRSTR)
+		tab.f_name = strdup("ft_strchrstr");
 }
 
 void	print_result_test(void)
@@ -92,6 +100,29 @@ void	error(void)
 	tab.er = 1;
 }
 
+void	ft_test_strchrstr(void)
+{
+	char str[]="wesh -v bien -f";
+	char str2[]="xvf";
+	char *here;
+
+	get_f_name(STRCHRSTR);
+	#ifdef TRY_SEGFAULT_THIS_SHIT
+	ft_strchrstr(NULL, NULL);
+	ft_strchrstr(NULL, "");
+	ft_strchrstr("", NULL);
+	ft_strchrstr("", "");
+	#endif
+
+	here = ft_strchrstr(str, str2);
+	if (strcmp(here, "v bien -f") != 0)
+		error();
+	here = ft_strchrstr(&here[1], str2);
+	if (strcmp(here, "f") != 0)
+		error();
+	print_result_test();
+}
+
 void	ft_test_strndup(void)
 {
 	char str[]="u will fail;;;";
@@ -99,13 +130,13 @@ void	ft_test_strndup(void)
 	char *newz;
 	char *real;
 
+	get_f_name(STRNDUP);
 	#ifdef TRY_SEGFAULT_THIS_SHIT
 	ft_strndup(NULL, -1);
 	ft_strndup(real, 400);
 	#endif
 	newz = ft_strndup(str, 4);
 	real = strndup(str, 4);
-	get_f_name(STRNDUP);
 	if (strcmp(newz, real) != 0)
 		error();
 	newz = ft_strndup(str2, 50);
@@ -114,6 +145,40 @@ void	ft_test_strndup(void)
 		error();
 	free(newz);
 	free(real);
+	print_result_test();
+}
+
+void	ft_test_list_i(void)
+{
+	char str[]="first link";
+	char str2[]="second link";
+	char str3[]="end link";
+	char str4[]="new second link";
+	t_list *list;
+	t_list *here;
+	t_list *newsec;
+
+	get_f_name(LIST_I);
+	#ifdef TRY_SEGFAULT_THIS_SHIT
+	#endif
+
+	list = ft_lstnew(str, (ft_strlen(str) + 1));
+	ft_lstadd_end(&list, ft_lstnew(str2, (ft_strlen(str2) + 1)));
+	ft_lstadd_end(&list , ft_lstnew(str3, (ft_strlen(str3) + 1)));
+
+	here = ft_lstati(list, 2);
+	if (strcmp((char *)here->content, "second link") != 0)
+		error();
+	here = ft_lstati(list, 1);
+	if (strcmp((char *)here->content, "first link") != 0)
+		error();
+	here = ft_lstlast(list);
+	if (strcmp((char *)here->content, "end link") != 0)
+		error();
+	newsec = ft_lstnew(str4, (ft_strlen(str4) + 1));
+	ft_lstadd_i(&list, newsec, 2);
+	if (strcmp((char *)list->next->content, "new second link") != 0)
+		error();
 	print_result_test();
 }
 
@@ -136,6 +201,8 @@ void	ft_test_double_list(void)
 	if (strcmp((char *)d_lst->next->content, "end link") != 0)
 		error();
 	//ft_printdlist(d_lst, '-');
+	if (ft_dlstlen(d_lst) != 2)
+		error();
 	ft_dlstdel(&d_lst, NULL);
 	print_result_test();
 }
@@ -162,7 +229,6 @@ void	ft_test_strstr(void)
 		error();
 	print_result_test();
 }
-
 
 void	ft_test_lstadd_end_print(void)
 {
@@ -205,6 +271,8 @@ void	ft_test_lstadd_end_print(void)
 		error();
 	if (strcmp(list->next->next->content, " last link add end ") != 0)
 		error();
+	if (ft_lstlen(list) != 3)
+		error();
 	print_result_test();
 }
 
@@ -243,11 +311,11 @@ void	ft_test_memccpy(void)
 
 void	ft_test_is_all(void)
 {
-	// unsigned char c;
-	// char c2;
-	// unsigned int c3;
-	// int	c4;
+	char str[]="\t \v\fsdfe65098876Wesh bien?";
+	char str2[]="123__4blahewr7987=";
+	int i;
 
+	i = 0;
 	get_f_name(IS_ALL);
 	#ifdef TRY_SEGFAULT_THIS_SHIT
 	ft_isalnum(-1);
@@ -256,16 +324,57 @@ void	ft_test_is_all(void)
 	ft_isdigit(00);
 	ft_isprint(-99999);
 	#endif
-	// c2 = 'b';
-	// while (c2 < 'f')
-	// {
-	// 	if (ft_isalnum(c2) != isalnum(c2)) // NOT THE SAME RETURN ON UBUNTU AND MAC OSX
-	// 	{
-	// 		error();
-	// 	}
-	// 	c2++;
-	// }
+	while (str[i])
+	{
+		if (ft_isspace(str[i]) != isspace(str[i]))
+			error();
+		if (ft_isalnum(str[i]) != isalnum(str[i]))
+			error();
+		if (ft_isascii(str[i]) != isascii(str[i]))
+			error();
+		if (ft_isdigit(str[i]) != isdigit(str[i]))
+			error();
+		if (ft_isprint(str[i]) != isprint(str[i]))
+			error();
+		if (ft_isalpha(str[i]) != isalpha(str[i]))
+			error();
+		i++;
+	}
+	i = 0;
+	while (str2[i])
+	{
+		if (ft_isspace(str2[i]) != isspace(str2[i]))
+			error();
+		if (ft_isalnum(str2[i]) != isalnum(str2[i]))
+			error();
+		if (ft_isascii(str2[i]) != isascii(str2[i]))
+			error();
+		if (ft_isdigit(str2[i]) != isdigit(str2[i]))
+			error();
+		if (ft_isprint(str2[i]) != isprint(str2[i]))
+			error();
+		if (ft_isalpha(str2[i]) != isalpha(str2[i]))
+			error();
+		i++;
+	}
 	#ifdef TRY_OCTAL_SET
+	char str3[]="\127\145\163\150\120\104\40";
+	while (str3[i])
+	{
+		if (ft_isspace(str3[i]) != isspace(str3[i]))
+			error();
+		if (ft_isalnum(str3[i]) != isalnum(str3[i]))
+			error();
+		if (ft_isascii(str3[i]) != isascii(str3[i]))
+			error();
+		if (ft_isdigit(str3[i]) != isdigit(str3[i]))
+			error();
+		if (ft_isprint(str3[i]) != isprint(str3[i]))
+			error();
+		if (ft_isalpha(str3[i]) != isalpha(str3[i]))
+			error();
+		i++;
+	}
 	#endif
 	print_result_test();
 }

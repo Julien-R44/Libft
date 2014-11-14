@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 20:04:50 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/13 00:32:57 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/13 14:55:12 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char 	*ft_strnstr(const char *s1, const char *s2, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t i;
 	size_t j;
