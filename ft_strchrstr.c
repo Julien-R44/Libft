@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchrstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/14 16:23:04 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/14 17:04:11 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/16 19:19:19 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char		*ft_strchrstr(const char *s1, const char *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	here = NULL;
 	while (s1[i])
 	{

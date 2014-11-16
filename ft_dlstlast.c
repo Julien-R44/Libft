@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_dlstlast.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:47:52 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/16 05:24:28 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/14 21:16:08 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/14 21:17:06 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+t_dlist	*ft_dlstlast(t_dlist *list)
 {
-	size_t i;
+	t_dlist *last;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
+	last = list;
+	while (last->next)
+		last = last->next;
+	return (last);
 }

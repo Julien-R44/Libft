@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/13 14:58:40 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/16 22:09:03 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char		*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	mem = -1;
+	if (!s)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		if ((char)c == s[i])

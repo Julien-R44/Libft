@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/14 01:05:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/14 13:04:06 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/16 19:16:55 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strndup(const char *s, size_t n)
 	char	*str;
 	size_t	len;
 
+	if (!s || n <= 0)
+		return (NULL);
 	len = ft_strlen(s);
 	if (n > len)
 		n = len;

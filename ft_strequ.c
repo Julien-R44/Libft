@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:29:59 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/11 03:32:48 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/16 19:26:16 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int			ft_strequ(char const *s1, char const *s2)
 	size_t	i;
 
 	i = 0;
+	if (!s1 && !s2)
+		return (1);
 	if (!s1 || !s2)
 		return (0);
 	while (s1[i] && s2[i])

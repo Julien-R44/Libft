@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_dlstadd_i.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/15 18:41:15 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/14 21:09:05 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/14 23:30:10 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+void	ft_dlstadd_i(t_dlist **list, t_dlist *lst_new, unsigned int n)
 {
-	int i;
+	t_dlist			*nav;
+	unsigned int	i;
+	unsigned int	len;
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s[i] != '\0')
+	nav = *list;
+	i = 1;
+	len = ft_dlstlen(*list);
+	if (n >= len)
+		ft_dlstadd_end(list, lst_new);
+	else if (n == 0)
+		ft_dlstadd(list, lst_new);
+	else
 	{
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
+		while (i < n)
+		{
+			nav = nav->next;
+			i++;
+		}
+		lst_new->next = nav->next;
+		lst_new->next->before = lst_new;
+		lst_new->before = nav;
+		nav->next = lst_new;
 	}
-	if (c == '\0' && s[i] == '\0')
-		return ((char*)&s[i]);
-	return (NULL);
 }

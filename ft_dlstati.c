@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_dlstati.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:47:52 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/16 05:24:28 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/14 21:15:29 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/14 23:35:27 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+t_dlist	*ft_dlstati(t_dlist *list, unsigned int i)
 {
-	size_t i;
+	t_dlist *nav;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
+	nav = list;
+	while (nav->next && (i - 1))
+	{
+		i--;
+		nav = nav->next;
+	}
+	return (nav);
 }

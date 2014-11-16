@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 20:38:02 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/13 14:58:53 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/16 19:11:05 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strstr(const char *str, const char *to_find)
 	const	char	*tmp1;
 	const	char	*tmp2;
 
+	if (!str || !to_find)
+		return (NULL);
 	if (*to_find == 0)
 		return ((char *)str);
 	while (*str != 0)
