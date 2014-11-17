@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:38:56 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/14 13:01:04 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/17 17:46:57 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	ptr = s;
 	i = 0;
-	if (n != 0)
+	if (n != 0 && s)
 	{
 		while (i < n)
 		{

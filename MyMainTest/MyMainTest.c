@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyMainTest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:19:38 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/16 23:38:03 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/17 17:02:07 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -784,7 +784,10 @@ void	ft_test_is_all(void)
 	while (str[i])
 	{
 		if (ft_isspace(str[i]) != isspace(str[i]))
+		{
+			printf("ERROR\n");
 			error();
+		}
 		if (ft_isalnum(str[i]) != isalnum(str[i]))
 			error();
 		if (ft_isascii(str[i]) != isascii(str[i]))
@@ -797,7 +800,7 @@ void	ft_test_is_all(void)
 			error();
 		if (ft_isupper(str[i]) != isupper(str[i]))
 			error();
-		if (ft_islower(str[i]) != isupper(str[i]))
+		if (ft_islower(str[i]) != islower(str[i]))
 			error();
 		i++;
 	}
@@ -816,12 +819,13 @@ void	ft_test_is_all(void)
 			error();
 		if (ft_isalpha(str2[i]) != isalpha(str2[i]))
 			error();
-		if (ft_isupper(str[i]) != isupper(str[i]))
+		if (ft_isupper(str2[i]) != isupper(str2[i]))
 			error();
-		if (ft_islower(str[i]) != isupper(str[i]))
+		if (ft_islower(str2[i]) != islower(str2[i]))
 			error();
 		i++;
 	}
+	i = 0;
 	#ifdef TRY_OCTAL_SET
 	char str3[]="\127\145\163\150\120\104\40";
 	while (str3[i])
@@ -838,9 +842,9 @@ void	ft_test_is_all(void)
 			error();
 		if (ft_isalpha(str3[i]) != isalpha(str3[i]))
 			error();
-		if (ft_isupper(str[i]) != isupper(str[i]))
+		if (ft_isupper(str3[i]) != isupper(str3[i]))
 			error();
-		if (ft_islower(str[i]) != isupper(str[i]))
+		if (ft_islower(str3[i]) != islower(str3[i]))
 			error();
 		i++;
 	}

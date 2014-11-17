@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/17 02:24:56 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/17 18:16:30 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-// INT FD;
 
 /*
 ** Simple linked list, and double linked list
@@ -139,7 +137,8 @@ void				ft_printlist(t_list *list, char sep);
 t_dlist				*ft_dlstnew(void const *content, size_t content_size);
 void				ft_dlstadd(t_dlist **alst, t_dlist *new);
 void				ft_dlstadd_end(t_dlist **alst, t_dlist *new);
-void				ft_dlstadd_i(t_dlist **list, t_dlist *lst_new, unsigned int n);
+void				ft_dlstadd_i(t_dlist **list, t_dlist *lst_new,
+					unsigned int n);
 int					ft_dlstlen(t_dlist *list);
 t_dlist				*ft_dlstati(t_dlist *list, unsigned int i);
 t_dlist				*ft_dlstlast(t_dlist *list);
