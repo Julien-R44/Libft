@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/16 05:18:59 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/17 02:24:56 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+// INT FD;
 
 /*
 ** Simple linked list, and double linked list
