@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:19:38 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/20 02:36:01 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/20 12:16:04 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int		main(void)
 		ft_test_strrchr();
 	#define FT_TEST_STREQU
 		ft_test_strequ();
+	#define FT_TEST_STRCAT
+		ft_test_strcat();
 	#define FT_TEST_STRNEQU
 		ft_test_strnequ();
 	#define FT_TEST_STRJOIN
@@ -64,6 +66,10 @@ int		main(void)
 		ft_test_strclr();
 	#define FT_TEST_STRDEL
 		ft_test_strdel();
+	#define FT_TEST_MEMREA
+		ft_test_memalloc();
+	#define FT_TEST_REALLOC
+		ft_test_realloc();
 	// ---- FUNC PERSO ---- //
 		printf("\nMy personal functions : \n");
 	#define FT_TEST_STRREV
@@ -97,37 +103,40 @@ void	get_f_name(int f_name)
 	taberror.er = 0;
 	if (taberror.f_name)
 		ft_strdel(&taberror.f_name);
-	STATUT_NAME(ATOI, "ft_atoi");
-	STATUT_NAME(BZERO, "ft_bzero");
-	STATUT_NAME(IS_ALL, "ft_is all");
-	STATUT_NAME(ITOA, "ft_itoa");
-	STATUT_NAME(MEMCCPY, "ft_memccpy");
-	STATUT_NAME(STRREV, "ft_strrev");
-	STATUT_NAME(STRCLEN, "ft_strclen");
-	STATUT_NAME(STRSTR, "ft_strstr");
-	STATUT_NAME(STRNDUP, "ft_strndup");
-	STATUT_NAME(LIST_I, "FT LIST I");
-	STATUT_NAME(D_LST, "D_LIST test");
-	STATUT_NAME(D_LIST_I, "FT D_LIST I");
-	STATUT_NAME(STRCHRSTR, "ft_strchrstr");
-	STATUT_NAME(STRCHR, "ft_strchr");
-	STATUT_NAME(STRRCHR, "ft_strrchr");
-	STATUT_NAME(ROTN, "ft_rotn");
-	STATUT_NAME(STREQU, "ft_strequ");
-	STATUT_NAME(STRNEQU, "ft_strnequ");
-	STATUT_NAME(STRJOIN, "ft_strjoin");
-	STATUT_NAME(STRSPLIT, "ft_strsplit");
-	STATUT_NAME(STRSUB, "ft_strsub");
-	STATUT_NAME(STRTRIM, "ft_strstrim");
-	STATUT_NAME(STRMAP, "ft_strmap");
-	STATUT_NAME(STRMAPI, "ft_strmapi");
-	STATUT_NAME(STRITER, "ft_striter");
-	STATUT_NAME(STRITERI, "ft_striteri");
-	STATUT_NAME(STRCLR, "ft_strclr");
-	STATUT_NAME(STRDEL, "ft_strdel");
-	STATUT_NAME(LST, "LIST test");
+	STATUT_NAME(ATOI, "ft_atoi")
+	STATUT_NAME(BZERO, "ft_bzero")
+	STATUT_NAME(IS_ALL, "ft_is all")
+	STATUT_NAME(ITOA, "ft_itoa")
+	STATUT_NAME(MEMCCPY, "ft_memccpy")
+	STATUT_NAME(STRREV, "ft_strrev")
+	STATUT_NAME(STRCLEN, "ft_strclen")
+	STATUT_NAME(STRSTR, "ft_strstr")
+	STATUT_NAME(STRNDUP, "ft_strndup")
+	STATUT_NAME(LIST_I, "FT LIST I")
+	STATUT_NAME(D_LST, "D_LIST test")
+	STATUT_NAME(D_LIST_I, "FT D_LIST I")
+	STATUT_NAME(STRCHRSTR, "ft_strchrstr")
+	STATUT_NAME(STRCHR, "ft_strchr")
+	STATUT_NAME(STRRCHR, "ft_strrchr")
+	STATUT_NAME(ROTN, "ft_rotn")
+	STATUT_NAME(STREQU, "ft_strequ")
+	STATUT_NAME(STRNEQU, "ft_strnequ")
+	STATUT_NAME(STRJOIN, "ft_strjoin")
+	STATUT_NAME(STRSPLIT, "ft_strsplit")
+	STATUT_NAME(STRSUB, "ft_strsub")
+	STATUT_NAME(STRTRIM, "ft_strstrim")
+	STATUT_NAME(STRMAP, "ft_strmap")
+	STATUT_NAME(STRMAPI, "ft_strmapi")
+	STATUT_NAME(STRITER, "ft_striter")
+	STATUT_NAME(STRITERI, "ft_striteri")
+	STATUT_NAME(STRCLR, "ft_strclr")
+	STATUT_NAME(STRDEL, "ft_strdel")
+	STATUT_NAME(LST, "LIST test")
 	STATUT_NAME(SWAPC, "ft_test_swap_contents")
-	STATUT_NAME(STRCACMP, "ft_strcasecmp");
+	STATUT_NAME(STRCACMP, "ft_strcasecmp")
+	STATUT_NAME(MEMALLOC, "ft_memalloc")
+	STATUT_NAME(REALLOC, "ft_realloc")
+	STATUT_NAME(STRCAT, "ft_strcat");
 }
 
 void	print_result_test(void)
@@ -180,6 +189,23 @@ void	iteri_dati(unsigned int i, char *c)
 		*c += 32;
 }
 
+void	ft_test_strcat(void)
+{
+	char *str;
+
+	get_f_name(STRCAT);
+	#ifndef TRY_SEGFAULT_THIS_SHIT
+	ft_strcat(NULL, NULL);
+	ft_strcat(NULL, "PD");
+	#endif
+	str = malloc(sizeof(char) * 10);
+	ft_strcat(str, "wesh");
+	ft_strcat(str, " pd");
+	if (strcmp(str, "wesh pd") != 0)
+		error();
+	print_result_test();
+}
+
 void	ft_test_strcasecmp(void)
 {
 	char *str="wEsH";
@@ -195,6 +221,67 @@ void	ft_test_strcasecmp(void)
 		error();
 	if (ft_strcasecmp(str, "wESHh") == 0)
 		error();
+	print_result_test();
+}
+
+void	ft_test_realloc(void)
+{
+	char	*str;
+	int		i;
+
+	i = 4;
+	get_f_name(REALLOC);
+	#ifndef TRY_SEGFAULT_THIS_SHIT
+	ft_realloc(NULL, 0, -1);
+	ft_realloc(str, 0, 0);
+	#endif
+
+	str = malloc(sizeof(char) * 5);
+	strcpy(str, "Wesh");
+	str = ft_realloc(str, ft_strlen(str) + 1, sizeof(char) * 50);
+	while (i < 50)
+	{
+		if (str[i] != 0)
+			error();
+		i++;
+	}
+	strcat(str, " PD");
+	if (strcmp(str, "Wesh PD") != 0)
+		error();
+	print_result_test();
+
+
+}
+
+void	ft_test_memalloc(void)
+{
+	char	*str;
+	int		*ptr;
+	int		i;
+
+	i = 0;
+	get_f_name(MEMALLOC);
+	#ifndef TRY_SEGFAULT_THIS_SHIT
+	ft_memalloc(-1);
+	ft_memalloc(sizeof(char) * 0);
+	ft_memalloc(0);
+	#endif
+
+	str = (char *)ft_memalloc(sizeof(char) * 50);
+	while (i < 50)
+	{
+		if (str[i] != 0)
+			error();
+		i++;
+	}
+	ptr = (int *)ft_memalloc(sizeof(int) * 10);
+	i = 0;
+	while (i++ < 10)
+	{
+		if (ptr[i] != 0)
+			error();
+		i++;
+	}
 	print_result_test();
 }
 

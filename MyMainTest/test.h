@@ -6,14 +6,14 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:15:36 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/20 02:35:32 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/20 12:14:04 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEST_H
 # define TEST_H
 
-#include "../Libft/libft.h"
+#include "../libft.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -54,6 +54,9 @@ typedef enum 	e_func
 				STRCHRSTR,
 				SWAPC,
 				STRCACMP,
+				MEMALLOC,
+				REALLOC,
+				STRCAT,
 }				e_funcz;
 
 typedef struct	s_test
@@ -93,6 +96,7 @@ void			ft_test_strstr(void);
 void			ft_test_is_all(void);
 void			ft_test_strequ(void);
 void			ft_test_strdel(void);
+void			ft_test_strcat(void);
 void			ft_test_strmapi(void);
 void			ft_test_strnequ(void);
 void			ft_test_strrchr(void);
@@ -103,10 +107,12 @@ void			ft_test_striter(void);
 void			ft_test_strclen(void);
 void			ft_test_dlist_i(void);
 void			ft_test_memccpy(void);
+void			ft_test_realloc(void);
+void			ft_test_memalloc(void);
 void			ft_test_striteri(void);
-void			ft_test_strcasecmp(void);
 void			ft_test_strsplit(void);
 void			ft_test_strchrstr(void);
+void			ft_test_strcasecmp(void);
 void			ft_test_double_list(void);
 void			ft_test_swap_contents(void);
 void			ft_test_lstadd_end_print(void);

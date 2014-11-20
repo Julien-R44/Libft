@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/20 00:15:26 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/20 12:41:28 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int					ft_isspace(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
 
+
 /*
 ** Memory
 */
@@ -97,6 +98,7 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcasecmp(const char *s1, const char *s2);
 int					ft_atoi(const char *s);
 char				*ft_itoa(int n);
 char				*ft_strnew(size_t size);
