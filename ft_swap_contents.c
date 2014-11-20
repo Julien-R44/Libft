@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcasecmp.c                                    :+:      :+:    :+:   */
+/*   ft_swap_contents.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/19 02:07:34 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/19 02:08:43 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/20 00:12:52 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/20 00:12:55 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcasecmp(const char *s1, const char *s2)
+void	ft_swap_contents(t_dlist **list1, t_dlist **list2)
 {
-	unsigned char s1_;
-	unsigned char s2_;
+	char	*tmp;
+	size_t	tmp2;
 
-	s1_ = 1;
-	s2_ = 1;
-	while (s1_ == s2_ && s1_ != 0)
-	{
-		s1_ = ft_tolower(*s1++);
-		s2_ = ft_tolower(*s2++);
-	}
-	return (s1_ - s2_);
+	tmp = (*list1)->content;
+	tmp2 = (*list1)->content_size;
+	(*list1)->content = (*list2)->content;
+	(*list1)->content_size = (*list2)->content_size;
+	(*list2)->content = tmp;
+	(*list2)->content_size = tmp2;
 }

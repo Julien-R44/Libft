@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/18 15:54:22 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/20 00:15:26 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 /*
-** Traitements et conditions alphanumeriques
+** Traitements et conditions alphanumeriques]
 */
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -97,7 +97,6 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_strcasecmp(const char *s1, const char *s2);
 int					ft_atoi(const char *s);
 char				*ft_itoa(int n);
 char				*ft_strnew(size_t size);
@@ -138,18 +137,20 @@ void				ft_printlist(t_list *list, char sep);
 t_dlist				*ft_dlstnew(void const *content, size_t content_size);
 void				ft_dlstadd(t_dlist **alst, t_dlist *new);
 void				ft_dlstadd_end(t_dlist **alst, t_dlist *new);
-void				ft_dlstadd_i(t_dlist **list, t_dlist *lst_new,
-					unsigned int n);
+void				ft_dlstadd_i(t_dlist **list, t_dlist *lst_new, unsigned int n);
 int					ft_dlstlen(t_dlist *list);
 t_dlist				*ft_dlstati(t_dlist *list, unsigned int i);
 t_dlist				*ft_dlstlast(t_dlist *list);
 void				ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_printdlist(t_dlist *list, char sep);
+void				ft_dlstrev(t_dlist **list);
+void				ft_swap_contents(t_dlist **list1, t_dlist **list2);
 
 /*
 ** Misc ..
 */
 char				*ft_rotn(char const *str, int n);
+void				ft_print_n_spaces(int n);
 
 #endif

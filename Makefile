@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
+#    By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2014/11/18 15:54:32 by jripoute         ###   ########.fr        #
+#    Updated: 2014/11/20 00:15:35 by y0ja             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ ft_lstadd_end.c ft_lstiter.c ft_lstmap.c ft_printlist.c ft_strlcat.c ft_dlstadd.
 ft_dlstadd_end.c ft_dlstnew.c ft_dlstdel.c ft_dlstdelone.c ft_printdlist.c ft_strndup.c \
 ft_isspace.c ft_lstlen.c ft_dlstlen.c ft_lstati.c ft_lstlast.c ft_lstadd_i.c ft_strchrstr.c \
 ft_dlstati.c ft_dlstlast.c ft_dlstadd_i.c ft_rotn.c ft_isupper.c ft_islower.c ft_realloc.c \
-ft_strcasecmp.c
+ft_strcasecmp.c ft_dlstrev.c ft_swap_contents.c ft_print_n_spaces.c
 FILES_O=$(FILES_C:.c=.o)
 
 all: $(NAME)

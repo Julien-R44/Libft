@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcasecmp.c                                    :+:      :+:    :+:   */
+/*   ft_dlstrev.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/19 02:07:34 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/19 02:08:43 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/20 00:11:06 by y0ja              #+#    #+#             */
+/*   Updated: 2014/11/20 00:11:14 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcasecmp(const char *s1, const char *s2)
+void	ft_dlstrev(t_dlist **list)
 {
-	unsigned char s1_;
-	unsigned char s2_;
+	t_dlist	*nav;
+	t_dlist *last;
+	int		len;
 
-	s1_ = 1;
-	s2_ = 1;
-	while (s1_ == s2_ && s1_ != 0)
+	nav = *list;
+	len = (ft_dlstlen(*list) / 2);
+	last = ft_dlstlast(*list);
+	while (len)
 	{
-		s1_ = ft_tolower(*s1++);
-		s2_ = ft_tolower(*s2++);
+		ft_swap_contents(&nav, &last);
+		nav = nav->next;
+		last = last->before;
+		len--;
 	}
-	return (s1_ - s2_);
 }

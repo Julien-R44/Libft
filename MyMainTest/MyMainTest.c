@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyMainTest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:19:38 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/17 17:02:07 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/20 02:36:01 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,10 @@ int		main(void)
 		ft_test_strchrstr();
 	#define FT_TEST_ROT_N
 		ft_test_rot_n();
+	#define FT_TEST_SWAP_CONTENTS
+		ft_test_swap_contents();
+	#define FT_TEST_STRCASECMP
+		ft_test_strcasecmp();
 	ft_strdel(&taberror.f_name);
 	return (0);
 }
@@ -122,6 +126,8 @@ void	get_f_name(int f_name)
 	STATUT_NAME(STRCLR, "ft_strclr");
 	STATUT_NAME(STRDEL, "ft_strdel");
 	STATUT_NAME(LST, "LIST test");
+	STATUT_NAME(SWAPC, "ft_test_swap_contents")
+	STATUT_NAME(STRCACMP, "ft_strcasecmp");
 }
 
 void	print_result_test(void)
@@ -174,6 +180,24 @@ void	iteri_dati(unsigned int i, char *c)
 		*c += 32;
 }
 
+void	ft_test_strcasecmp(void)
+{
+	char *str="wEsH";
+	char *str2="WESH";
+
+	get_f_name(STRCACMP);
+	#ifndef TRY_SEGFAULT_THIS_SHIT
+	ft_strcasecmp(NULL, NULL);
+	ft_strcasecmp(NULL, str);
+	#endif
+
+	if (ft_strcasecmp(str, str2) != 0)
+		error();
+	if (ft_strcasecmp(str, "wESHh") == 0)
+		error();
+	print_result_test();
+}
+
 void	ft_test_strdel(void)
 {
 	char *str;
@@ -185,6 +209,31 @@ void	ft_test_strdel(void)
 	str = (char *)malloc(sizeof(char) * 10);
 	ft_strdel(&str);
 	if (str != NULL)
+		error();
+	print_result_test();
+}
+
+void	ft_test_swap_contents(void)
+{
+	t_dlist *list;
+	char *str="Bonjour";
+	char *str2="Wesh";
+	
+	get_f_name(SWAPC);
+	#ifndef TRY_SEGFAULT_THIS_SHIT
+	ft_swap_contents(NULL, NULL);
+	#endif
+
+	list = ft_dlstnew(str, ft_strlen(str) + 1);
+	ft_dlstadd_end(&list, ft_dlstnew(str2, ft_strlen(str2) + 1));
+	if (strcmp((char*)list->next->content, "Wesh") != 0)
+		error();
+	if (strcmp((char*)list->content, "Bonjour") != 0)
+		error();
+	ft_swap_contents(&list, &list->next);
+	if (strcmp((char*)list->content, "Wesh") != 0)
+		error();
+	if (strcmp((char*)list->next->content, "Bonjour") != 0)
 		error();
 	print_result_test();
 }
@@ -784,10 +833,7 @@ void	ft_test_is_all(void)
 	while (str[i])
 	{
 		if (ft_isspace(str[i]) != isspace(str[i]))
-		{
-			printf("ERROR\n");
 			error();
-		}
 		if (ft_isalnum(str[i]) != isalnum(str[i]))
 			error();
 		if (ft_isascii(str[i]) != isascii(str[i]))

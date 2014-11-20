@@ -6,14 +6,14 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 02:15:36 by y0ja              #+#    #+#             */
-/*   Updated: 2014/11/16 23:37:15 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/20 02:35:32 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEST_H
 # define TEST_H
 
-#include "../libft.h"
+#include "../Libft/libft.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -52,6 +52,8 @@ typedef enum 	e_func
 				STRSPLIT,
 				D_LIST_I,
 				STRCHRSTR,
+				SWAPC,
+				STRCACMP,
 }				e_funcz;
 
 typedef struct	s_test
@@ -102,9 +104,11 @@ void			ft_test_strclen(void);
 void			ft_test_dlist_i(void);
 void			ft_test_memccpy(void);
 void			ft_test_striteri(void);
+void			ft_test_strcasecmp(void);
 void			ft_test_strsplit(void);
 void			ft_test_strchrstr(void);
 void			ft_test_double_list(void);
+void			ft_test_swap_contents(void);
 void			ft_test_lstadd_end_print(void);
 
 #endif
