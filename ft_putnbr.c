@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 01:10:11 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/09 02:43:03 by jripoute         ###   ########.fr       */
+/*   Updated: 2014/11/21 11:09:58 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_putnbr(int n)
 {
-	ft_putstr(ft_itoa(n));
+	char *str;
+
+	str = ft_itoa(n);
+	ft_putstr(str);
+	ft_strdel(&str);
 }

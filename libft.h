@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/20 12:41:28 by y0ja             ###   ########.fr       */
+/*   Updated: 2014/11/21 11:26:32 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int					ft_toupper(int c);
 int					ft_isspace(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
-
 
 /*
 ** Memory
@@ -139,7 +138,8 @@ void				ft_printlist(t_list *list, char sep);
 t_dlist				*ft_dlstnew(void const *content, size_t content_size);
 void				ft_dlstadd(t_dlist **alst, t_dlist *new);
 void				ft_dlstadd_end(t_dlist **alst, t_dlist *new);
-void				ft_dlstadd_i(t_dlist **list, t_dlist *lst_new, unsigned int n);
+void				ft_dlstadd_i(t_dlist **list,
+	t_dlist *lst_new, unsigned int n);
 int					ft_dlstlen(t_dlist *list);
 t_dlist				*ft_dlstati(t_dlist *list, unsigned int i);
 t_dlist				*ft_dlstlast(t_dlist *list);
