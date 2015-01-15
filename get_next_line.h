@@ -17,6 +17,7 @@
 
 # include "libft.h"
 
+int		end_del(char *buf);
 int		get_next_line(int const fd, char **line);
 int		create_and_cut_da_line(char **str, char *slash, char **line, char *buf);
 
