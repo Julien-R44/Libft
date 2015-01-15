@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define ABS(x) (x < 0) ? -x : x
+
 /*
 ** Simple linked list, and double linked list
 */
@@ -52,7 +54,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 /*
-** Traitements et conditions alphanumeriques]
+** Traitements et conditions alphanumeriques
 */
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -80,8 +82,11 @@ void				*ft_realloc(void *ptr, size_t old, size_t size);
 void				ft_memdel(void **ap);
 
 /*
-** Manipulation de chaine de caracteres
+**	########
+**	Manipulation de chaine de caracteres
+**	########
 */
+int					ft_intlen(int nb);
 size_t				ft_strlen(const char *s);
 size_t				ft_strclen(char const *s, char c);
 char				*ft_strdup(const char *s1);
@@ -143,6 +148,7 @@ void				ft_dlstadd_i(t_dlist **list,
 int					ft_dlstlen(t_dlist *list);
 t_dlist				*ft_dlstati(t_dlist *list, unsigned int i);
 t_dlist				*ft_dlstlast(t_dlist *list);
+void				ft_dlst_insert(t_dlist **list, t_dlist *to_ins);
 void				ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_printdlist(t_dlist *list, char sep);
