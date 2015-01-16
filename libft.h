@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 # define ABS(x) (x < 0) ? -x : x
 
@@ -148,6 +149,7 @@ void				ft_dlstadd_i(t_dlist **list,
 int					ft_dlstlen(t_dlist *list);
 t_dlist				*ft_dlstati(t_dlist *list, unsigned int i);
 t_dlist				*ft_dlstlast(t_dlist *list);
+t_dlist				*ft_dlstfirst(t_dlist *list);
 void				ft_dlst_insert(t_dlist **list, t_dlist *to_ins);
 void				ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t));

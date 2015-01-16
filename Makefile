@@ -31,7 +31,7 @@ ft_dlstadd_end.c ft_dlstnew.c ft_dlstdel.c ft_dlstdelone.c ft_printdlist.c ft_st
 ft_isspace.c ft_lstlen.c ft_dlstlen.c ft_lstati.c ft_lstlast.c ft_lstadd_i.c ft_strchrstr.c \
 ft_dlstati.c ft_dlstlast.c ft_dlstadd_i.c ft_rotn.c ft_isupper.c ft_islower.c ft_realloc.c \
 ft_strcasecmp.c ft_dlstrev.c ft_swap_contents.c ft_print_n_spaces.c get_next_line.c \
-ft_intlen.c ft_dlst_insert.c 
+ft_intlen.c ft_dlst_insert.c ft_dlstfirst.c
 FILES_O=$(FILES_C:.c=.o)
 
 all: $(NAME)

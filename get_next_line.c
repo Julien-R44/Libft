@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 int		create_and_cut_da_line(char **str, char *slash, char **line, char *buf)
 {

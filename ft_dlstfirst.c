@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_dlstfirst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 23:13:50 by y0ja              #+#    #+#             */
-/*   Updated: 2014/12/05 03:32:39 by y0ja             ###   ########.fr       */
+/*   Created: 2014/11/14 21:16:08 by jripoute          #+#    #+#             */
+/*   Updated: 2014/11/22 21:55:53 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# define BUFF_SIZE 8
+t_dlist	*ft_dlstfirst(t_dlist *list)
+{
+	t_dlist *last;
 
-int		end_del(char *buf);
-int		get_next_line(int const fd, char **line);
-int		create_and_cut_da_line(char **str, char *slash, char **line, char *buf);
-
-#endif
+	last = list;
+	if (list == NULL)
+		return (NULL);
+	if (list->before == NULL)
+		return (list);
+	while (last->before)
+		last = last->before;
+	return (last);
+}
