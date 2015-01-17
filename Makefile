@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+         #
+#    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2015/01/04 16:10:59 by y0ja             ###   ########.fr        #
+#    Updated: 2015/01/17 02:27:34 by jripoute         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,10 @@ FILES_O=$(FILES_C:.c=.o)
 all: $(NAME)
 
 $(NAME): make_obj do_lib
-	@echo "\\033[1;32mSuccess."
+	@echo "\\033[1;32mSuccess.\\033[0;39m"
 
 do_lib: make_obj
-	@echo "\\033[1;34mIndexing the lib..."	
+	@echo "\\033[1;34mIndexing the lib...\\033[0;39m"
 	@ar rc $(NAME) $(FILES_O)
 	@ranlib $(NAME)
 
@@ -50,17 +50,17 @@ ifeq ($(DEBUG),yes)
 else
 	@echo "\\033[1;31mNo flags.\\033[0;39m"
 endif
-	@echo "\\033[1;34mGenerating objects... Please wait."
+	@echo "\\033[1;34mGenerating objects... Please wait.\\033[0;39m"
 	@gcc $(FLAGS) -c $(FILES_C)
 
 .PHONY: clean fclean re
 
 clean:
-	@echo "\\033[1;34mDeleting objects..."
+	@echo "\\033[1;34mDeleting objects...\\033[0;39m"
 	@rm -f $(FILES_O)
 
 fclean: clean
-	@echo "\\033[1;34mDeleting libft.a..."
+	@echo "\\033[1;34mDeleting libft.a...\\033[0;39m"
 	@rm -f $(NAME)
 
 re: fclean all
