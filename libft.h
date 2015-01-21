@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/01/17 22:18:27 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/01/21 03:07:47 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,7 @@ void				*ft_realloc(void *ptr, size_t old, size_t size);
 void				ft_memdel(void **ap);
 
 /*
-**	########
 **	Manipulation de chaine de caracteres
-**	########
 */
 int					ft_intlen(int nb);
 size_t				ft_strlen(const char *s);
