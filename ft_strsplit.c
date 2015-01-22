@@ -6,13 +6,13 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 22:00:07 by jripoute          #+#    #+#             */
-/*   Updated: 2015/01/21 03:06:50 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/01/22 02:32:59 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_nb_wordz(char const *s, char c)
+int			get_nb_wordz(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -23,7 +23,7 @@ int		get_nb_wordz(char const *s, char c)
 	while (s[i])
 	{
 		j = 0;
-		while (s[i + j] && ((s[i] == c && s[i + j] == c) 
+		while (s[i + j] && ((s[i] == c && s[i + j] == c)
 			|| (s[i] != c && s[i + j] != c)))
 			j++;
 		if (s[i] != c)
@@ -36,9 +36,9 @@ int		get_nb_wordz(char const *s, char c)
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**res;
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	k = 0;
@@ -49,7 +49,7 @@ char		**ft_strsplit(char const *s, char c)
 	while (s[i])
 	{
 		j = 0;
-		while (s[i + j] && ((s[i] == c && s[i + j] == c) 
+		while (s[i + j] && ((s[i] == c && s[i + j] == c)
 			|| (s[i] != c && s[i + j] != c)))
 			j++;
 		if (s[i] != c)
