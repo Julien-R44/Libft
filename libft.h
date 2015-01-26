@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/01/22 02:33:32 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/01/26 23:34:10 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct		s_dlist
 */
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
+void				ft_putaddr(void *ptr);
 void				ft_putchar(char c);
 void				ft_putnbr(int n);
 
