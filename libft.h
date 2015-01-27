@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/01/26 23:34:10 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/01/27 06:22:46 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,6 @@ void				ft_swap_contents(t_dlist **list1, t_dlist **list2);
 */
 char				*ft_rotn(char const *str, int n);
 int					ft_rand_a_b(int a, int b);
-void				ft_print_n_spaces(int n);
+void				ft_putnchar(char c, int n);
 
 #endif

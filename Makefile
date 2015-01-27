@@ -6,7 +6,7 @@
 #    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2015/01/26 23:33:37 by jripoute         ###   ########.fr        #
+#    Updated: 2015/01/27 06:22:58 by jripoute         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ ft_dlstadd_end.c ft_dlstnew.c ft_dlstdel.c ft_dlstdelone.c ft_printdlist.c \
 ft_strndup.c ft_isspace.c ft_lstlen.c ft_dlstlen.c ft_lstati.c ft_lstlast.c \
 ft_lstadd_i.c ft_strchrstr.c ft_dlstati.c ft_dlstlast.c ft_dlstadd_i.c \
 ft_rotn.c ft_isupper.c ft_islower.c ft_realloc.c ft_strcasecmp.c ft_dlstrev.c \
-ft_swap_contents.c ft_print_n_spaces.c get_next_line.c ft_intlen.c \
+ft_swap_contents.c ft_putnchar.c get_next_line.c ft_intlen.c \
 ft_lstadd.c ft_dlst_insert.c ft_dlstfirst.c ft_rand_a_b.c ft_putaddr.c
 FILES_O=$(FILES_C:.c=.o)
 
