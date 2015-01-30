@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/01/27 06:22:46 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/01/30 03:05:14 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void				ft_memdel(void **ap);
 int					ft_intlen(int nb);
 size_t				ft_strlen(const char *s);
 size_t				ft_strclen(char const *s, char c);
+int					ft_charcount(const char *str, char c);
 char				*ft_strdup(const char *s1);
 char				*ft_strndup(const char *s, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
