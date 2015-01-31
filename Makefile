@@ -6,61 +6,152 @@
 #    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2015/01/30 03:05:20 by jripoute         ###   ########.fr        #
+#    Updated: 2015/01/31 02:31:19 by jripoute         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-DEBUG=yes
-NAME=libft.a
-ifeq ($(DEBUG),yes)
-	FLAGS=-Wall -Wextra -Werror
+NAME	= libft.a
+CC		= gcc
+LDFLAGS	= -I./include/
+SRC		= \
+		atoi/ft_atoi.c \
+		atoi/ft_itoa.c \
+		lst/ft_lstadd.c \
+		lst/ft_lstadd_end.c \
+		lst/ft_lstadd_i.c \
+		lst/ft_lstati.c \
+		lst/ft_lstdel.c \
+		lst/ft_lstdelone.c \
+		lst/ft_lstiter.c \
+		lst/ft_lstlast.c \
+		lst/ft_lstlen.c \
+		lst/ft_lstmap.c \
+		lst/ft_lstnew.c \
+		dlst/ft_dlst_insert.c \
+		dlst/ft_dlstadd.c \
+		dlst/ft_dlstadd_end.c \
+		dlst/ft_dlstadd_i.c \
+		dlst/ft_dlstati.c \
+		dlst/ft_dlstdel.c \
+		dlst/ft_dlstdelone.c \
+		dlst/ft_dlstfirst.c \
+		dlst/ft_dlstlast.c \
+		dlst/ft_dlstlen.c \
+		dlst/ft_dlstnew.c \
+		dlst/ft_dlstrev.c \
+		dlst/ft_swap_contents.c \
+		misc/ft_intlen.c \
+		misc/ft_rand_a_b.c \
+		misc/ft_rotn.c \
+		misc/ft_tolower.c \
+		misc/ft_toupper.c \
+		misc/get_next_line.c \
+		mem/ft_bzero.c \
+		mem/ft_memalloc.c \
+		mem/ft_memccpy.c \
+		mem/ft_memchr.c \
+		mem/ft_memcmp.c \
+		mem/ft_memcpy.c \
+		mem/ft_memdel.c \
+		mem/ft_memmove.c \
+		mem/ft_memset.c \
+		mem/ft_realloc.c \
+		put/ft_printdlist.c \
+		put/ft_printlist.c \
+		put/ft_putaddr.c \
+		put/ft_putchar.c \
+		put/ft_putchar_fd.c \
+		put/ft_putendl.c \
+		put/ft_putendl_fd.c \
+		put/ft_putnbr.c \
+		put/ft_putnbr_fd.c \
+		put/ft_putnchar.c \
+		put/ft_putstr.c \
+		put/ft_putstr_fd.c \
+		is/ft_isalnum.c \
+		is/ft_isalpha.c \
+		is/ft_isascii.c \
+		is/ft_isdigit.c \
+		is/ft_islower.c \
+		is/ft_isprint.c \
+		is/ft_isspace.c \
+		is/ft_isupper.c \
+		str/ft_charcount.c \
+		str/ft_strcasecmp.c \
+		str/ft_strcat.c \
+		str/ft_strchr.c \
+		str/ft_strchrstr.c \
+		str/ft_strclen.c \
+		str/ft_strclr.c \
+		str/ft_strcmp.c \
+		str/ft_strcpy.c \
+		str/ft_strdel.c \
+		str/ft_strdup.c \
+		str/ft_strequ.c \
+		str/ft_striter.c \
+		str/ft_striteri.c \
+		str/ft_strjoin.c \
+		str/ft_strlcat.c \
+		str/ft_strlen.c \
+		str/ft_strmap.c \
+		str/ft_strmapi.c \
+		str/ft_strncat.c \
+		str/ft_strncmp.c \
+		str/ft_strncpy.c \
+		str/ft_strndup.c \
+		str/ft_strnequ.c \
+		str/ft_strnew.c \
+		str/ft_strnstr.c \
+		str/ft_strrchr.c \
+		str/ft_strrev.c \
+		str/ft_strsplit.c \
+		str/ft_strstr.c \
+		str/ft_strsub.c \
+		str/ft_strtrim.c
+
+SRCDIR	= ./src/
+OBJDIR	= ./obj/
+INCDIR	= ./include/
+SRCS	= $(addprefix $(SRCDIR), $(SRC))
+OBJS 	= $(addprefix $(OBJDIR), $(patsubst %.c, %.o,$(SRC)))
+INCS	= $(addprefix -I , $(INCDIR))
+DIRSOBJ	= $(sort $(dir $(OBJS)))
+DEBUG=no
+ifeq ($(DEBUG),no)
+	CFLAGS = -Wall -Wextra -Werror
 else
-	FLAGS=
+	CFLAGS = -g
 endif
-FILES_C=ft_putstr.c  ft_strrev.c  ft_putendl.c  ft_putchar.c  ft_putnbr.c \
-ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_bzero.c \
-ft_memccpy.c ft_memcpy.c ft_memset.c ft_memmove.c ft_isalnum.c ft_isalpha.c \
-ft_isascii.c ft_isdigit.c ft_isprint.c ft_tolower.c ft_toupper.c ft_strlen.c \
-ft_strnstr.c ft_strclen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
-ft_strncat.c ft_strstr.c ft_strchr.c ft_strrchr.c ft_strmap.c ft_strmapi.c \
-ft_strcmp.c ft_strncmp.c ft_atoi.c ft_itoa.c ft_memalloc.c ft_memdel.c \
-ft_memchr.c ft_memcmp.c ft_strnew.c ft_strdel.c ft_strsplit.c ft_strtrim.c \
-ft_strclr.c ft_striter.c ft_striteri.c ft_strequ.c ft_strnequ.c ft_strsub.c \
-ft_strjoin.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd_end.c \
-ft_lstiter.c ft_lstmap.c ft_printlist.c ft_strlcat.c ft_dlstadd.c \
-ft_dlstadd_end.c ft_dlstnew.c ft_dlstdel.c ft_dlstdelone.c ft_printdlist.c \
-ft_strndup.c ft_isspace.c ft_lstlen.c ft_dlstlen.c ft_lstati.c ft_lstlast.c \
-ft_lstadd_i.c ft_strchrstr.c ft_dlstati.c ft_dlstlast.c ft_dlstadd_i.c \
-ft_rotn.c ft_isupper.c ft_islower.c ft_realloc.c ft_strcasecmp.c ft_dlstrev.c \
-ft_swap_contents.c ft_putnchar.c get_next_line.c ft_intlen.c \
-ft_lstadd.c ft_dlst_insert.c ft_dlstfirst.c ft_rand_a_b.c ft_putaddr.c \
-ft_charcount.c
-FILES_O=$(FILES_C:.c=.o)
-
-all: $(NAME)
-
-$(NAME): make_obj do_lib
-	@echo "\\033[1;32mSuccess.\\033[0;39m"
-
-do_lib: make_obj
-	@echo "\\033[1;34mIndexing the lib...\\033[0;39m"
-	@ar rc $(NAME) $(FILES_O)
-	@ranlib $(NAME)
-
-make_obj:
-ifeq ($(DEBUG),yes)
-	@echo "\\033[1;31mDebug compilation.. (-Wall -Wextra -Werror)\\033[0;39m"
-else
-	@echo "\\033[1;31mNo flags.\\033[0;39m"
-endif
-	@echo "\\033[1;34mGenerating objects... Please wait.\\033[0;39m"
-	@gcc $(FLAGS) -c $(FILES_C)
 
 .PHONY: clean fclean re
 
+.SILENT:
+
+all: $(NAME)
+
+$(NAME): makedir $(OBJS)
+	echo "\\033[1;34mIndexing the lib...\\033[0;39m"
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
+	echo "\\033[1;32mSuccess.\\033[0;39m"
+
+makedir:
+ifeq ($(DEBUG),no)
+	echo "\\033[1;31mDebug compilation.. (-Wall -Wextra -Werror)\\033[0;39m"
+else
+	echo "\\033[1;31mNo flags.\\033[0;39m"
+endif
+	echo "\\033[1;34mGenerating objects... Please wait.\\033[0;39m"
+	mkdir -p $(OBJDIR)
+	mkdir -p $(DIRSOBJ)
+
+$(OBJDIR)%.o: $(SRCDIR)/%.c
+	$(CC) -c -o $@ $< $(INCS) $(CFLAGS)
+
+
 clean:
 	@echo "\\033[1;34mDeleting objects...\\033[0;39m"
-	@rm -f $(FILES_O)
+	@rm -f $(OBJS)
 
 fclean: clean
 	@echo "\\033[1;34mDeleting libft.a...\\033[0;39m"
