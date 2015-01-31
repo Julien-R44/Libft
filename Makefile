@@ -148,13 +148,12 @@ endif
 $(OBJDIR)%.o: $(SRCDIR)/%.c
 	$(CC) -c -o $@ $< $(INCS) $(CFLAGS)
 
-
 clean:
-	@echo "\\033[1;34mDeleting objects...\\033[0;39m"
-	@rm -f $(OBJS)
+	echo "\\033[1;34mDeleting objects...\\033[0;39m"
+	rm -f $(OBJS)
 
 fclean: clean
-	@echo "\\033[1;34mDeleting libft.a...\\033[0;39m"
-	@rm -f $(NAME)
+	echo "\\033[1;34mDeleting libft.a...\\033[0;39m"
+	rm -f $(NAME)
 
 re: fclean all
