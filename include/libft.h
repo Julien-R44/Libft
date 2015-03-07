@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: so <so@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/01/30 03:05:14 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/03/07 17:58:29 by so               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,19 @@ void				ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t));
 void				ft_printdlist(t_dlist *list, char sep);
 void				ft_dlstrev(t_dlist **list);
 void				ft_swap_contents(t_dlist **list1, t_dlist **list2);
+
+/*
+** Double listes chainees circulaires
+*/
+t_dlist				*ft_dlstcnew(void const *content, size_t content_size);
+void				ft_dlstcadd(t_dlist *root, t_dlist *new);
+void				ft_dlstcpop(t_dlist *node, t_dlist *new);
+void				ft_dlstcpush(t_dlist *node, t_dlist *new);
+t_dlist				*ft_dlstcfirst(t_dlist *root);
+t_dlist				*ft_dlstclast(t_dlist *root);
+void				ft_dlstcclear(t_dlist *list);
+void				ft_dlstcdel_one(t_dlist *node);
+void				ft_dlstcdel(t_dlist **list);
 
 /*
 ** Misc ..
