@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
+#    By: so <so@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2015/01/31 02:31:19 by jripoute         ###   ########.fr        #
+#    Updated: 2015/03/07 18:05:23 by so               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,15 @@ SRC		= \
 		dlst/ft_dlstlast.c \
 		dlst/ft_dlstlen.c \
 		dlst/ft_dlstnew.c \
+		dlstc/ft_dlstcnew.c \
+		dlstc/ft_dlstcadd.c \
+		dlstc/ft_dlstcpop.c \
+		dlstc/ft_dlstcpush.c \
+		dlstc/ft_dlstcfirst.c \
+		dlstc/ft_dlstclast.c \
+		dlstc/ft_dlstcclear.c \
+		dlstc/ft_dlstcdel_one.c \
+		dlstc/ft_dlstcdel.c \
 		dlst/ft_dlstrev.c \
 		dlst/ft_swap_contents.c \
 		misc/ft_intlen.c \
