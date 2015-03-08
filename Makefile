@@ -116,7 +116,13 @@ SRC		= \
 		str/ft_strsplit.c \
 		str/ft_strstr.c \
 		str/ft_strsub.c \
-		str/ft_strtrim.c
+		str/ft_strtrim.c \
+		wstr/ft_putwchar.c \
+		wstr/ft_putwcs.c \
+		wstr/ft_wcscat.c \
+		wstr/ft_wcscpy.c \
+		wstr/ft_wcsdup.c \
+		wstr/ft_wcslen.c 
 
 SRCDIR	= ./src/
 OBJDIR	= ./obj/

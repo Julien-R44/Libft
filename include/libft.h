@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <wchar.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -169,6 +170,16 @@ t_dlist				*ft_dlstclast(t_dlist *root);
 void				ft_dlstcclear(t_dlist *list);
 void				ft_dlstcdel_one(t_dlist *node);
 void				ft_dlstcdel(t_dlist **list);
+
+/*
+**	Wchar_t functions
+*/
+void				ft_putwchar(wint_t c);
+void				ft_putwcs(const wchar_t *str);
+size_t				ft_wcslen(const wchar_t *str);
+wchar_t				*ft_wcscat(wchar_t *s1, const wchar_t *s2);
+wchar_t				*ft_wcsdup(const wchar_t *s1);
+wchar_t				*ft_wcscpy(wchar_t *dst, const wchar_t *src);
 
 /*
 ** Misc ..
