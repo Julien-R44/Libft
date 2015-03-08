@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: so <so@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/03/07 17:58:29 by so               ###   ########.fr       */
+/*   Updated: 2015/03/08 22:52:12 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,6 +180,7 @@ size_t				ft_wcslen(const wchar_t *str);
 wchar_t				*ft_wcscat(wchar_t *s1, const wchar_t *s2);
 wchar_t				*ft_wcsdup(const wchar_t *s1);
 wchar_t				*ft_wcscpy(wchar_t *dst, const wchar_t *src);
+int					ft_wcsequ(wchar_t const *s1, wchar_t const *s2);
 
 /*
 ** Misc ..
