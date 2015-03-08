@@ -6,7 +6,7 @@
 #    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2015/03/08 22:53:29 by jripoute         ###   ########.fr        #
+#    Updated: 2015/03/08 23:02:10 by jripoute         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ LDFLAGS	= -I./include/
 SRC		= \
 		atoi/ft_atoi.c \
 		atoi/ft_itoa.c \
+		atoi/ft_llitoa.c \
+		atoi/ft_ullitoa.c \
 		lst/ft_lstadd.c \
 		lst/ft_lstadd_end.c \
 		lst/ft_lstadd_i.c \

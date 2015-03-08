@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/03/08 22:52:12 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/03/08 23:01:39 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,13 @@ void				*ft_realloc(void *ptr, size_t old, size_t size);
 void				ft_memdel(void **ap);
 
 /*
+** Itoa & Atoi functions
+*/
+int					ft_atoi(const char *s);
+char				*ft_itoa(int n);
+char				*ft_llitoa(long long int nb);
+char				*ft_ullitoa(unsigned long long nb);
+/*
 **	Manipulation de chaine de caracteres
 */
 int					ft_intlen(int nb);
@@ -105,8 +112,6 @@ char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strcasecmp(const char *s1, const char *s2);
-int					ft_atoi(const char *s);
-char				*ft_itoa(int n);
 char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
