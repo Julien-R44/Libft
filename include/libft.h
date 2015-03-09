@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/03/08 23:01:39 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/03/09 00:00:06 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int					ft_atoi(const char *s);
 char				*ft_itoa(int n);
 char				*ft_llitoa(long long int nb);
 char				*ft_ullitoa(unsigned long long nb);
+
 /*
 **	Manipulation de chaine de caracteres
 */
