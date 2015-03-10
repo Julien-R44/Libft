@@ -6,7 +6,7 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 05:04:02 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/14 12:59:10 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/03/10 02:42:59 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,22 @@ static void		default_deleter(void *data, size_t size)
 	ft_memdel(&data);
 }
 
+static void		replace_node(t_dlist **alst, t_dlist *node, int m)
+{
+	*alst = node;
+	if (m == 1)
+		(*alst)->before = NULL;
+	else
+		(*alst)->next = NULL;
+}
+
 void			ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t))
 {
-	t_dlist		*first_link;
-	t_dlist		*last_link;
+	t_dlist		*prev_link;
+	t_dlist		*next_link;
 
-	first_link = (*alst)->before;
-	last_link = (*alst)->next;
+	prev_link = (*alst)->before;
+	next_link = (*alst)->next;
 	if (del == NULL)
 		del = default_deleter;
 	if (*alst)
@@ -32,14 +41,14 @@ void			ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t))
 		del((*alst)->content, (*alst)->content_size);
 		ft_memdel((void **)alst);
 	}
-	if (last_link && !first_link)
-		*alst = last_link;
-	else if (first_link && !last_link)
-		*alst = first_link;
-	else if (first_link && last_link)
+	if (next_link && !prev_link)
+		replace_node(alst, next_link, 1);
+	else if (prev_link && !next_link)
+		replace_node(alst, prev_link, 0);
+	else if (prev_link && next_link)
 	{
-		*alst = first_link;
-		first_link->next = last_link;
-		last_link->before = first_link;
+		*alst = prev_link;
+		prev_link->next = next_link;
+		next_link->before = prev_link;
 	}
 }
