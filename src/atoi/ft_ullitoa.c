@@ -34,9 +34,10 @@ static char		*convert_ullint(char *str, unsigned long long nb)
 	return (str);
 }
 
-char	*ft_ullitoa(unsigned long long nb)
+char			*ft_ullitoa(unsigned long long nb)
 {
 	char *str;
+
 	str = (char *)ft_memalloc(sizeof(char) * ft_ullintlen(nb) + 1);
 	if (!str)
 		return (NULL);

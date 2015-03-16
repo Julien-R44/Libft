@@ -34,7 +34,7 @@ static char		*convert_llint(char *str, long long int nb)
 	return (str);
 }
 
-char	*ft_llitoa(long long int nb)
+char			*ft_llitoa(long long int nb)
 {
 	char	*str;
 	int		isneg;
