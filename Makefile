@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+         #
+#    By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2015/03/08 23:02:10 by jripoute         ###   ########.fr        #
+#    Updated: 2015/05/09 02:15:03 by y0ja             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,7 +125,8 @@ SRC		= \
 		wstr/ft_wcscpy.c \
 		wstr/ft_wcsdup.c \
 		wstr/ft_wcslen.c \
-		wstr/ft_wcsequ.c
+		wstr/ft_wcsequ.c \
+		math/ft_pow.c
 
 SRCDIR	= ./src/
 OBJDIR	= ./obj/

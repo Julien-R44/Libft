@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
+/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/03/09 00:00:06 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/05/09 02:14:41 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,12 @@ wchar_t				*ft_wcscat(wchar_t *s1, const wchar_t *s2);
 wchar_t				*ft_wcsdup(const wchar_t *s1);
 wchar_t				*ft_wcscpy(wchar_t *dst, const wchar_t *src);
 int					ft_wcsequ(wchar_t const *s1, wchar_t const *s2);
+
+/*
+** Maths
+*/
+double				ft_pow(double x, int pow);
+
 
 /*
 ** Misc ..
