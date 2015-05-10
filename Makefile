@@ -6,7 +6,7 @@
 #    By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 00:27:00 by jripoute          #+#    #+#              #
-#    Updated: 2015/05/10 04:31:28 by y0ja             ###   ########.fr        #
+#    Updated: 2015/05/10 05:06:01 by y0ja             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -130,7 +130,8 @@ SRC		= \
 		math/ft_pow.c \
 		array/ft_2dcharlen.c \
 		array/ft_2dchardup.c \
-		array/ft_2dchardel.c
+		array/ft_2dchardel.c \
+		array/ft_2dchar_add.c
 
 SRCDIR	= ./src/
 OBJDIR	= ./obj/

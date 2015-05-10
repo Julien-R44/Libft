@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/05/10 04:31:15 by y0ja             ###   ########.fr       */
+/*   Updated: 2015/05/10 05:03:01 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void				ft_memdel(void **ap);
 void				ft_2dchardel(char ***tab);
 size_t				ft_2dcharlen(char **tab);
 char				**ft_2dchardup(char **tab);
+char				**ft_2dchar_add(char **tab, char *add);
 
 /*
 ** Itoa & Atoi functions

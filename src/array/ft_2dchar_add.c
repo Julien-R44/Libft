@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2dchardup.c                                     :+:      :+:    :+:   */
+/*   ft_2dchar_add.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/10 03:41:51 by y0ja              #+#    #+#             */
-/*   Updated: 2015/05/10 04:46:45 by y0ja             ###   ########.fr       */
+/*   Created: 2015/05/10 05:02:46 by y0ja              #+#    #+#             */
+/*   Updated: 2015/05/10 05:02:47 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_2dchardup(char **tab)
+char	**ft_2dchar_add(char **tab, char *add)
 {
 	int		i;
 	int		len;
-	char	**newtab;
+	char	**tmp;
 
 	i = 0;
 	len = ft_2dcharlen(tab);
-	newtab = (char **)malloc(sizeof(char *) * len + 1);
-	while (i < len)
+	tmp = (char **)malloc(sizeof(char *) * (len + 2));
+	if (!tmp)
+		return (NULL);
+	while (tab[i])
 	{
-		newtab[i] = strdup(tab[i]);
+		tmp[i] = tab[i];
 		i++;
 	}
-	newtab[i] = NULL;
-	return (newtab);
+	tmp[i] = add;
+	tmp[i + 1] = NULL;
+	free(tab);
+	return (tmp);
 }
