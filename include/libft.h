@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/05/10 00:28:23 by y0ja             ###   ########.fr       */
+/*   Updated: 2015/05/10 03:43:53 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,13 @@ void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
 void				*ft_realloc(void *ptr, size_t old, size_t size);
 void				ft_memdel(void **ap);
+
+/*
+** 2D Char array
+*/
+void				ft_2dchardel(char ***tab);
+size_t				ft_2dcharlen(char **tab);
+char				**ft_2dchardup(char **tab);
 
 /*
 ** Itoa & Atoi functions

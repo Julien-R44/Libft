@@ -126,7 +126,10 @@ SRC		= \
 		wstr/ft_wcsdup.c \
 		wstr/ft_wcslen.c \
 		wstr/ft_wcsequ.c \
-		math/ft_pow.c
+		math/ft_pow.c \
+		array/ft_2dcharlen.c \
+		array/ft_2dchardup.c \
+		array/ft_2dchardel.c 
 
 SRCDIR	= ./src/
 OBJDIR	= ./obj/
