@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/05/10 03:43:53 by y0ja             ###   ########.fr       */
+/*   Updated: 2015/05/10 04:31:15 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 # include "colors.h"
 # include "get_next_line.h"
 
@@ -207,5 +208,6 @@ double				ft_pow(double x, int pow);
 char				*ft_rotn(char const *str, int n);
 int					ft_rand_a_b(int a, int b);
 void				ft_putnchar(char c, int n);
+char				*ft_kebab(char *str, char *str2, ...);
 
 #endif
