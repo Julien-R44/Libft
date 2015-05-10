@@ -6,7 +6,7 @@
 /*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 01:03:03 by jripoute          #+#    #+#             */
-/*   Updated: 2015/05/10 05:03:01 by y0ja             ###   ########.fr       */
+/*   Updated: 2015/05/10 19:51:34 by y0ja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 # include "get_next_line.h"
 
 # define ABS(x) (x < 0) ? -x : x
+
+# define TRUE 1
+# define FALSE 0
+
+typedef	int			t_bool;
 
 /*
 ** Simple linked list, and double linked list
