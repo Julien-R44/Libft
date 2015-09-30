@@ -6,13 +6,13 @@
 /*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 03:25:18 by jripoute          #+#    #+#             */
-/*   Updated: 2014/11/12 19:08:18 by jripoute         ###   ########.fr       */
+/*   Updated: 2015/09/30 03:30:10 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*yolo;
 	int		i;

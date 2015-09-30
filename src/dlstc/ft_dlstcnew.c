@@ -6,13 +6,13 @@
 /*   By: so <so@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/07 17:36:43 by so                #+#    #+#             */
-/*   Updated: 2015/03/07 17:38:23 by so               ###   ########.fr       */
+/*   Updated: 2015/09/30 03:25:26 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dlist *ft_dlstcnew(void const *content, size_t content_size)
+t_dlist		*ft_dlstcnew(void const *content, size_t content_size)
 {
 	t_dlist		*dlst;
 	void		*content_cpy;

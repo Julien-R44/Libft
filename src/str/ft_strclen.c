@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: y0ja <y0ja@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jripoute <jripoute@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 20:20:55 by jripoute          #+#    #+#             */
-/*   Updated: 2015/05/10 05:10:33 by y0ja             ###   ########.fr       */
+/*   Updated: 2015/09/30 03:29:12 by jripoute         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ size_t			ft_strclen(char const *s, char c)
 	}
 	if (c == '\0' && !s[i])
 		return (i);
-	return (i-1);
+	return (i - 1);
 }
